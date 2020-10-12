@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main_character/Personaje.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 182.649, 10 )
+
+[node name="test" type="Node2D"]
+
+[node name="Personaje" parent="." instance=ExtResource( 1 )]
+position = Vector2( 155.052, 95.8763 )
+speed = 150.0
+jump_force = 350.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 137.806, 218.979 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
