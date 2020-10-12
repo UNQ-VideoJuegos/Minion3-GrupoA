@@ -9,12 +9,27 @@ extents = Vector2( 182.649, 10 )
 [node name="test" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Personaje" parent="." instance=ExtResource( 1 )]
-position = Vector2( 155.052, 95.8763 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 137.806, 218.979 )
+position = Vector2( 140.051, 279.592 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 137.806, 218.979 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 824.266, 52.1678 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 211.345, 298.175 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 334.338, -115.244 )
+shape = SubResource( 1 )
+
+[node name="Personaje" parent="." instance=ExtResource( 1 )]
+speed = 350.0
+gravity = 500.0
 [connection signal="shoot" from="Personaje" to="." method="_on_Personaje_shoot"]

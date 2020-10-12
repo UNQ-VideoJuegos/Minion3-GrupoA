@@ -1,17 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Bullet.gd" type="Script" id=1]
+[ext_resource path="res://bullets/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://assets/colored_transparent.png" type="Texture" id=2]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.0625, 3.0625 )
+
 [node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 24
 script = ExtResource( 1 )
+speed = 750
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 region_enabled = true
+region_rect = Rect2( 378.621, 72.6825, 6.64334, 6.64333 )
 
 [node name="LifeTime" type="Timer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 [connection signal="timeout" from="LifeTime" to="." method="_on_LifeTime_timeout"]

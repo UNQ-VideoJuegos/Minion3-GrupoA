@@ -26,7 +26,8 @@ func shoot():
 func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
 	var is_jump_interrupted = Input.is_action_just_released("move_up") and velocity.y < 0.0
-	var direction = get_direction()
+	#var direction = get_direction()
+	var direction = control()
 	velocity = calculate_move(velocity,direction,is_jump_interrupted)
 	if Input.is_action_just_pressed("click"):
 		shoot()
@@ -39,6 +40,19 @@ func get_direction():
 	return Vector2(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		-1.0 if Input.is_action_just_pressed("move_up") and is_on_floor() else 0.0)
 
+func control():
+	var dir = Vector2.ZERO
+	if Input.is_action_pressed("move_left"):
+		dir.x = -1.0
+		$Sprite.flip_h = true
+	if Input.is_action_pressed("move_right"):
+		dir.x = 1.0
+		$Sprite.flip_h = false
+	if Input.is_action_just_pressed("move_up") and is_on_floor():
+		dir.y = -1.0
+	else :
+		0.0
+	return dir
 
 func calculate_move(linear_velocity, direction,is_jump_interrupted):
 	var move = linear_velocity
