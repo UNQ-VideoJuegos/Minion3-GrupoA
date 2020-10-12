@@ -20,3 +20,8 @@ region_rect = Rect2( 307.575, 157.779, 12.6489, 11.4376 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="GunPosition" type="Position2D" parent="."]
+
+[node name="GunTimer" type="Timer" parent="."]
+[connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]

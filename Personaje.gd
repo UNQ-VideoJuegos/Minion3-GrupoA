@@ -1,18 +1,35 @@
 extends KinematicBody2D
 
+signal shoot
+
 export  var speed = 150.0
 export  var jump_force = 350.0
 export  var gravity = 800.0
+export (PackedScene) var Bullet # recordar inicializar en el inspector
+export (float) var gun_cooldown = 0.3
+
 
 const FLOOR_NORMAL = Vector2.UP
 var velocity = Vector2.ZERO
+var can_shoot = true
+
+func _ready():
+	$GunTimer.wait_time = gun_cooldown
+
+func shoot():
+	if can_shoot:
+		can_shoot = false
+		$GunTimer.start()
+		var dir = Vector2(1,0).rotated($GunPosition.global_rotation)
+		emit_signal("shoot",Bullet,$GunPosition.global_position,dir)
 
 func _physics_process(delta):
+	$GunPosition.look_at(get_global_mouse_position())
 	var is_jump_interrupted = Input.is_action_just_released("move_up") and velocity.y < 0.0
 	var direction = get_direction()
 	velocity = calculate_move(velocity,direction,is_jump_interrupted)
 	if Input.is_action_just_pressed("click"):
-		pass # shoot
+		shoot()
 	if Input.is_action_just_pressed("ui_accept"): # posible agregado o no
 		pass # dash?
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
@@ -32,7 +49,9 @@ func calculate_move(linear_velocity, direction,is_jump_interrupted):
 	if is_jump_interrupted:
 		move.y = 0.0
 	return move
-	
-	
-	
-	
+
+
+
+
+func _on_GunTimer_timeout():
+	can_shoot = true
