@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://main_character/Personaje.gd" type="Script" id=1]
+[ext_resource path="res://scenes/models/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://assets/colored_transparent.png" type="Texture" id=2]
-[ext_resource path="res://bullets/Bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/models/Bullet.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.31004, 8.34467 )
@@ -12,7 +12,6 @@ collision_layer = 2
 script = ExtResource( 1 )
 speed = 200.0
 Bullet = ExtResource( 3 )
-gun_cooldown = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

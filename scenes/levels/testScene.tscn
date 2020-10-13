@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://main_character/Personaje.tscn" type="PackedScene" id=1]
-[ext_resource path="res://main_character/testScene.gd" type="Script" id=2]
+[ext_resource path="res://scenes/models/Personaje.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/levels/testScene.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 182.649, 10 )
@@ -30,6 +30,6 @@ position = Vector2( 334.338, -115.244 )
 shape = SubResource( 1 )
 
 [node name="Personaje" parent="." instance=ExtResource( 1 )]
+position = Vector2( 62.8134, 261.391 )
 speed = 350.0
-gravity = 800.0
 [connection signal="shoot" from="Personaje" to="." method="_on_Personaje_shoot"]
