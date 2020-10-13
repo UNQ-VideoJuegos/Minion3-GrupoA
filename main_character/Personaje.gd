@@ -6,12 +6,18 @@ export  var speed = 150.0
 export  var jump_force = 350.0
 export  var gravity = 800.0
 export (PackedScene) var Bullet # recordar inicializar en el inspector
-export (float) var gun_cooldown = 0.3
-
+export (float) var gun_cooldown = 0.2
+export (int) var dash_impulse = 2000
 
 const FLOOR_NORMAL = Vector2.UP
 var velocity = Vector2.ZERO
 var can_shoot = true
+
+var can_dash = true
+var dash_direction : Vector2
+
+var jump_intents = 2
+
 
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
@@ -26,19 +32,25 @@ func shoot():
 func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
 	var is_jump_interrupted = Input.is_action_just_released("move_up") and velocity.y < 0.0
-	#var direction = get_direction()
 	var direction = control()
+	direction.y = jump()
 	velocity = calculate_move(velocity,direction,is_jump_interrupted)
 	if Input.is_action_just_pressed("click"):
 		shoot()
 	if Input.is_action_just_pressed("ui_accept"): # posible agregado o no
-		pass # dash?
+		dash()
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 
 
-func get_direction():
-	return Vector2(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		-1.0 if Input.is_action_just_pressed("move_up") and is_on_floor() else 0.0)
+
+func jump():
+	var dir = 0.0
+	if is_on_floor():
+		jump_intents = 2
+	if Input.is_action_just_pressed("move_up") and jump_intents > 0:
+		dir = -1.0
+		jump_intents -=1
+	return dir
 
 func control():
 	var dir = Vector2.ZERO
@@ -48,11 +60,19 @@ func control():
 	if Input.is_action_pressed("move_right"):
 		dir.x = 1.0
 		$Sprite.flip_h = false
-	if Input.is_action_just_pressed("move_up") and is_on_floor():
-		dir.y = -1.0
-	else :
-		0.0
 	return dir
+
+func dash():
+	if is_on_floor():
+		can_dash = true
+	if Input.is_action_pressed("move_left"):
+		dash_direction = Vector2.LEFT
+	if Input.is_action_pressed("move_right"):
+		dash_direction = Vector2.RIGHT
+	if can_dash:
+		can_dash = false
+		velocity += dash_direction.normalized() * dash_impulse
+		move_and_slide(velocity)
 
 func calculate_move(linear_velocity, direction,is_jump_interrupted):
 	var move = linear_velocity

@@ -31,5 +31,5 @@ shape = SubResource( 1 )
 
 [node name="Personaje" parent="." instance=ExtResource( 1 )]
 speed = 350.0
-gravity = 500.0
+gravity = 800.0
 [connection signal="shoot" from="Personaje" to="." method="_on_Personaje_shoot"]
