@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.31004, 8.34467 )
 
-[node name="Personaje" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
 speed = 200.0
