@@ -13,6 +13,7 @@ script = ExtResource( 1 )
 speed = 750
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 378.621, 72.6825, 6.64334, 6.64333 )

@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/models/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/testScene.gd" type="Script" id=2]
-[ext_resource path="res://scenes/models/Portal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/levels/Level1.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 182.649, 10 )
@@ -34,8 +32,3 @@ shape = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 62.8134, 261.391 )
 speed = 350.0
-
-[node name="Portal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 987, 227 )
-next_scene = ExtResource( 4 )
-[connection signal="shoot" from="Player" to="." method="_on_Personaje_shoot"]

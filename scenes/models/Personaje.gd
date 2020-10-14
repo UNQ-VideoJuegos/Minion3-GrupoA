@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-signal shoot
-
 export  var speed = 150.0
 export  var jump_force = 350.0
 export  var gravity = 800.0
@@ -26,9 +24,14 @@ func shoot():
 	if can_shoot:
 		can_shoot = false
 		$GunTimer.start()
-		var dir = Vector2(1,0).rotated($GunPosition.global_rotation)
-		emit_signal("shoot",Bullet,$GunPosition.global_position,dir)
+		_shoot_bullet()
 
+func _shoot_bullet():
+	var dir = Vector2(1,0).rotated($GunPosition.global_rotation)
+	var b = Bullet.instance()
+	add_child(b)
+	b.start($GunPosition.position, dir)
+	
 func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
 	var is_jump_interrupted = Input.is_action_just_released("move_up") and velocity.y < 0.0
@@ -40,7 +43,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"): # posible agregado o no
 		dash()
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
-
+	_handleCollision()
 
 
 func jump():
@@ -85,7 +88,11 @@ func calculate_move(linear_velocity, direction,is_jump_interrupted):
 	return move
 
 
-
+func _handleCollision():
+	for i in get_slide_count():
+		var col = get_slide_collision(i)
+		if (col.collider.has_method("collide_with")):
+			col.collider.collide_with(col, self)
 
 func _on_GunTimer_timeout():
 	can_shoot = true
