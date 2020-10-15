@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/colored_transparent.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.0625, 3.0625 )
+extents = Vector2( 5.64676, 5.82873 )
 
 [node name="Bullet" type="Area2D"]
 collision_layer = 4

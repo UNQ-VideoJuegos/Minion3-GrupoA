@@ -1,19 +1,46 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/models/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/models/Floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/models/Interruptor.tscn" type="PackedScene" id=5]
 
 [node name="Level1" type="Node2D"]
 position = Vector2( -21.4102, -82.0968 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 338.235, 477.697 )
+position = Vector2( 409.235, 559.697 )
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 555.368, 447.528 )
+position = Vector2( 556.376, 498.336 )
 
 [node name="Platform3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 759.782, 409.835 )
+position = Vector2( 465.784, 420.921 )
+
+[node name="Platform4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 317.738, 354.291 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 396.1, 457.247 )
+position = Vector2( 303.765, 622.6 )
+
+[node name="Floor" parent="." instance=ExtResource( 3 )]
+position = Vector2( 110.889, 519.23 )
+scale = Vector2( 3.05506, 2.61704 )
+
+[node name="Floor2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 982.424, 357.812 )
+scale = Vector2( -2.08555, 5.24815 )
+
+[node name="Floor3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 75.8875, 176.839 )
+scale = Vector2( 1.8293, 2.82954 )
+
+[node name="Door" parent="." instance=ExtResource( 4 )]
+position = Vector2( 836.983, 474.448 )
+scale = Vector2( 4, 4 )
+
+[node name="Interruptor" parent="." instance=ExtResource( 5 )]
+position = Vector2( 50.7793, 236.978 )
+scale = Vector2( 1.46148, 1.53358 )
+[connection signal="triggered" from="Interruptor" to="Door" method="_on_Interruptor_triggered"]
