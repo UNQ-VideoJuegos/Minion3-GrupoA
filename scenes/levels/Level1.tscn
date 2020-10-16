@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/models/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/models/Floor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/models/Interruptor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/models/main character/PlayerRB2d.tscn" type="PackedScene" id=6]
 
 [node name="Level1" type="Node2D"]
 position = Vector2( -21.4102, -82.0968 )
@@ -13,16 +13,13 @@ position = Vector2( -21.4102, -82.0968 )
 position = Vector2( 409.235, 559.697 )
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 556.376, 498.336 )
+position = Vector2( 553.548, 498.336 )
 
 [node name="Platform3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 465.784, 420.921 )
 
 [node name="Platform4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 317.738, 354.291 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 303.765, 622.6 )
 
 [node name="Floor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 110.889, 519.23 )
@@ -43,4 +40,8 @@ scale = Vector2( 4, 4 )
 [node name="Interruptor" parent="." instance=ExtResource( 5 )]
 position = Vector2( 50.7793, 236.978 )
 scale = Vector2( 1.46148, 1.53358 )
+
+[node name="PlayerRB2d" parent="." instance=ExtResource( 6 )]
+position = Vector2( 197.99, 540.23 )
+speed = 20
 [connection signal="triggered" from="Interruptor" to="Door" method="_on_Interruptor_triggered"]

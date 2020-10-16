@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/models/Personaje.gd" type="Script" id=1]
+[ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://assets/colored_transparent.png" type="Texture" id=2]
-[ext_resource path="res://scenes/models/Bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/models/Bullets/Bullet.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.31004, 8.34467 )
