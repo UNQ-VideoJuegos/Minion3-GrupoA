@@ -1,16 +1,9 @@
-[gd_scene load_steps=5 format=2]
-
-[ext_resource path="res://scenes/models/RigidPlayer.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/models/ImpulseZone.gd" type="Script" id=2]
+[gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 170, 68.489 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 512.826, 10 )
-
 [node name="ImpulseZone" type="Node2D"]
-script = ExtResource( 2 )
 
 [node name="Antigrav" type="Area2D" parent="."]
 position = Vector2( 686.755, 460.756 )
@@ -54,37 +47,3 @@ shape = SubResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="Label" type="Label" parent="."]
-margin_left = 243.574
-margin_top = 508.475
-margin_right = 476.574
-margin_bottom = 522.475
-text = "Activar formas de colisión en debug."
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 542.149
-margin_top = 512.965
-margin_right = 775.149
-margin_bottom = 526.965
-text = "Click      click           click"
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 515.21, 584.803 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 2 )
-
-[node name="RigidPlayer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 212.413, 506.395 )

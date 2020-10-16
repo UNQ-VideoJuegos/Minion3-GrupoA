@@ -6,10 +6,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 272.192, 10 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 101.506, 18.7401 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 69.9741, 70.5287 )
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -76,7 +76,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 915.076, 378.746 )
@@ -88,7 +88,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Area2D3" type="Area2D" parent="."]
 position = Vector2( 572.468, 525.305 )
