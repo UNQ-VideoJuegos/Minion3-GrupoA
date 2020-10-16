@@ -11,7 +11,7 @@ var Bullet = preload("res://scenes/models/Bullets/Bullet.tscn")
 var can_shoot = true
 var can_dash = true
 var dash_direction : Vector2 = Vector2.RIGHT
-var jump_intents = 2
+var jump_intents = 3
 
 func _ready():
 	$ShootTimer.wait_time = gun_cooldown
