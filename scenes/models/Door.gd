@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
+
 const SPEED = 20
-const DOOR_LIMIT = -15
+const DOOR_LIMIT = -6.5
 
 var opening = false
 var velocity = Vector2()

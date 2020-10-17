@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/colored_transparent.png" type="Texture" id=1]
 [ext_resource path="res://scenes/models/Door.gd" type="Script" id=2]
@@ -8,13 +8,19 @@
 extents = Vector2( 2.09981, 7.76377 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 15.3996, 1.00295 )
+extents = Vector2( 13.6148, 0.787012 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2.23264, 0.845348 )
 
 [node name="Door" type="Area2D"]
 position = Vector2( 0, 0.125 )
 script = ExtResource( 3 )
 
 [node name="Door" type="KinematicBody2D" parent="."]
+position = Vector2( -0.105112, 2.52269 )
+scale = Vector2( 0.999663, 0.647182 )
+z_index = -100
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Door"]
@@ -32,16 +38,33 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Roof" type="StaticBody2D" parent="."]
-position = Vector2( 0.125, 0 )
+position = Vector2( -0.277838, -34.3034 )
+scale = Vector2( 0.999611, 5.57304 )
 
 [node name="Sprite" type="Sprite" parent="Roof"]
-position = Vector2( 36.8741, 6.65912 )
-scale = Vector2( 1.91837, -0.312142 )
+position = Vector2( 38.54, 6.79528 )
+scale = Vector2( 1.8973, -0.120307 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 339.906, 257.617, 17.0168, 10.084 )
+region_rect = Rect2( 168.715, 287.312, 18.9254, 17.1649 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Roof"]
-position = Vector2( 36.1134, 6.54803 )
+position = Vector2( 38.1347, 6.57282 )
 shape = SubResource( 2 )
+
+[node name="Roof2" type="StaticBody2D" parent="."]
+position = Vector2( -20.2709, -50.9055 )
+rotation = 0.0091298
+scale = Vector2( 0.999611, 5.57304 )
+
+[node name="Sprite" type="Sprite" parent="Roof2"]
+position = Vector2( 43.4989, 9.56985 )
+scale = Vector2( 2.08576, 0.143268 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 187.911, 173.237, 2.05618, 11.8996 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roof2"]
+position = Vector2( 43.6429, 9.57083 )
+shape = SubResource( 3 )
 [connection signal="timeout" from="Door/DoorTimer" to="Door" method="_on_DoorTimer_timeout"]

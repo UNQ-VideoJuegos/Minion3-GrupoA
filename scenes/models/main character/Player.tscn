@@ -5,24 +5,26 @@
 [ext_resource path="res://scenes/models/Bullets/Bullet.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.31004, 8.34467 )
+extents = Vector2( 15.7267, 19.5464 )
 
 [sub_resource type="RayShape2D" id=2]
 
 [node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.7, 0.7 )
 collision_layer = 2
 script = ExtResource( 1 )
 Bullet = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-one_way_collision = true
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 307.575, 157.779, 12.6489, 11.4376 )
+region_rect = Rect2( 409.614, 0.237827, 13.0805, 16.4101 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.398403, -1.10669 )
+shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="GunPosition" type="Position2D" parent="."]
 

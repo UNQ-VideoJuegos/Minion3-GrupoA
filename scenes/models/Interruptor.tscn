@@ -4,6 +4,7 @@
 [ext_resource path="res://scenes/models/Interruptor.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.2795, 9.95291 )
 
 [node name="Interruptor" type="Area2D"]
 collision_layer = 7
@@ -11,10 +12,13 @@ collision_mask = 31
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3.46478, 2.99231 )
+scale = Vector2( 1.36471, 1.35204 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 221.299, 306.505, 15.271, 15.271 )
+region_rect = Rect2( -1.60296, 186.334, 19.2045, 17.623 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.3073, 2.83482 )
 shape = SubResource( 1 )
 [connection signal="area_entered" from="." to="." method="_on_Interruptor_area_entered"]

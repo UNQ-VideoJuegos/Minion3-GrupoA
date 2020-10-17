@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export  var color = Color.white
 export  var speed = 300.0
 export  var jump_force = 400.0
 export  var gravity = 800.0
@@ -21,6 +22,7 @@ var jump_intents = 2
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	$DashTimer.wait_time = dash_cooldown
+	modulate = Color.orange
 
 func shoot():
 	if can_shoot:
