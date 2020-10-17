@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/models/Floor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/models/Interruptor.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/models/main character/PlayerRB2d.tscn" type="PackedScene" id=6]
 
 [node name="Level1" type="Node2D"]
 position = Vector2( -21.4102, -82.0968 )
@@ -40,9 +39,4 @@ scale = Vector2( 4, 4 )
 [node name="Interruptor" parent="." instance=ExtResource( 5 )]
 position = Vector2( 50.7793, 236.978 )
 scale = Vector2( 1.46148, 1.53358 )
-
-[node name="PlayerRB2d" parent="." instance=ExtResource( 6 )]
-position = Vector2( 197.99, 540.23 )
-speed = 20
-jump_force = -800
 [connection signal="triggered" from="Interruptor" to="Door" method="_on_Interruptor_triggered"]
