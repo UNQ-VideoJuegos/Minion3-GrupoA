@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export  var speed = 300.0
-export  var jump_force = 350.0
+export  var jump_force = 400.0
 export  var gravity = 800.0
 export (PackedScene) var Bullet # recordar inicializar en el inspector
 export (float) var gun_cooldown = 0.2
