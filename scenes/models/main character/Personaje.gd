@@ -1,24 +1,26 @@
 extends KinematicBody2D
 
-export  var speed = 150.0
+export  var speed = 300.0
 export  var jump_force = 350.0
 export  var gravity = 800.0
 export (PackedScene) var Bullet # recordar inicializar en el inspector
 export (float) var gun_cooldown = 0.2
-export (int) var dash_impulse = 2000
+export (int) var dash_impulse = 60
+export (float) var dash_cooldown = 2
 
 const FLOOR_NORMAL = Vector2.UP
 var velocity = Vector2.ZERO
-var can_shoot = true
 
+var can_shoot = true
 var can_dash = true
-var dash_direction : Vector2
+var dash_direction : Vector2 = Vector2.RIGHT
 
 var jump_intents = 2
 
 
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
+	$DashTimer.wait_time = dash_cooldown
 
 func shoot():
 	if can_shoot:
@@ -34,23 +36,24 @@ func _shoot_bullet():
 	
 func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
-	var is_jump_interrupted = Input.is_action_just_released("move_up") and velocity.y < 0.0
+	var is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction = control()
 	direction.y = jump()
-	velocity = calculate_move(velocity,direction,is_jump_interrupted)
 	if Input.is_action_just_pressed("click"):
 		shoot()
-	if Input.is_action_just_pressed("ui_accept"): # posible agregado o no
-		dash()
+	if Input.is_action_just_pressed("dash"): # posible agregado o no
+		direction = dash()
+	velocity = calculate_move(velocity,direction,is_jump_interrupted)
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	_handleCollision()
+	print(can_dash)
 
 
 func jump():
 	var dir = 0.0
 	if is_on_floor():
 		jump_intents = 2
-	if Input.is_action_just_pressed("move_up") and jump_intents > 0:
+	if Input.is_action_just_pressed("jump") and jump_intents > 0:
 		dir = -1.0
 		jump_intents -=1
 	return dir
@@ -59,23 +62,21 @@ func control():
 	var dir = Vector2.ZERO
 	if Input.is_action_pressed("move_left"):
 		dir.x = -1.0
+		dash_direction = Vector2.LEFT
 		$Sprite.flip_h = true
 	if Input.is_action_pressed("move_right"):
 		dir.x = 1.0
+		dash_direction = Vector2.RIGHT
 		$Sprite.flip_h = false
 	return dir
 
 func dash():
-	if is_on_floor():
-		can_dash = true
-	if Input.is_action_pressed("move_left"):
-		dash_direction = Vector2.LEFT
-	if Input.is_action_pressed("move_right"):
-		dash_direction = Vector2.RIGHT
+	var dir = Vector2.ZERO
 	if can_dash:
 		can_dash = false
-		velocity += dash_direction.normalized() * dash_impulse
-		move_and_slide(velocity)
+		$DashTimer.start()
+		dir = dash_direction.normalized() * dash_impulse
+	return dir
 
 func calculate_move(linear_velocity, direction,is_jump_interrupted):
 	var move = linear_velocity
@@ -94,5 +95,15 @@ func _handleCollision():
 		if (col.collider.has_method("collide_with")):
 			col.collider.collide_with(col, self)
 
+func _on_DashTimer_timeout():
+	can_dash = true
+
 func _on_GunTimer_timeout():
 	can_shoot = true
+
+
+func _on_Area2D_area_entered(area): # codigo de ejemplo
+	position.y *= area.get_gravity_vector().y
+
+
+

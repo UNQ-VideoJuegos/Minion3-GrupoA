@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://assets/colored_transparent.png" type="Texture" id=2]
@@ -7,10 +7,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.31004, 8.34467 )
 
+[sub_resource type="RayShape2D" id=2]
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
-speed = 200.0
+speed = 300.0
 Bullet = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -26,4 +28,16 @@ region_rect = Rect2( 307.575, 157.779, 12.6489, 11.4376 )
 [node name="GunPosition" type="Position2D" parent="."]
 
 [node name="GunTimer" type="Timer" parent="."]
+
+[node name="DetectorArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorArea2D"]
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="DashTimer" type="Timer" parent="."]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
+[connection signal="area_entered" from="DetectorArea2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
