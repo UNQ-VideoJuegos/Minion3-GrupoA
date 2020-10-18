@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 4000
+export var SPEED = 4000
 
 var canTriggerFalling = true
 var falling = false
