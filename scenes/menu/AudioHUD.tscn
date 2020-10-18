@@ -4,7 +4,6 @@
 [ext_resource path="res://fonts/minecraft-evenings/Minecraft Evenings.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/menu/AudioHUD.gd" type="Script" id=3]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 70
 outline_color = Color( 0.968627, 0.980392, 0.980392, 1 )
