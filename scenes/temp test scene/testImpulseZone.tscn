@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/models/ImpulseZone.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/models/main character/PlayerRB2d.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/models/Interruptor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/models/Floor.tscn" type="PackedScene" id=5]
@@ -21,6 +20,3 @@ position = Vector2( 744.802, 58.2705 )
 [node name="Floor" parent="." instance=ExtResource( 5 )]
 position = Vector2( 229.903, 536.088 )
 scale = Vector2( 10, 1 )
-
-[node name="PlayerRB2d" parent="." instance=ExtResource( 2 )]
-position = Vector2( 726.792, 557.278 )
