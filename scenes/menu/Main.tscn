@@ -1,15 +1,16 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=1]
-[ext_resource path="res://sounds/bensound-house.wav" type="AudioStream" id=2]
-[ext_resource path="res://sounds/error_003.wav" type="AudioStream" id=3]
-[ext_resource path="res://fonts/minecraft-evenings/Minecraft Evenings.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://fonts/crackman/crackman.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://scenes/models/WelcomeHUD.gd" type="Script" id=6]
+[ext_resource path="res://scenes/models/WelcomeHUD.gd" type="Script" id=2]
+[ext_resource path="res://scenes/models/AudioHUD.gd" type="Script" id=3]
+[ext_resource path="res://fonts/crackman/crackman.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://fonts/minecraft-evenings/Minecraft Evenings.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://scenes/models/DifficultyHUD.gd" type="Script" id=6]
 [ext_resource path="res://scenes/models/OptionsHUD.gd" type="Script" id=7]
-[ext_resource path="res://scenes/menu/Main.gd" type="Script" id=8]
-[ext_resource path="res://scenes/models/AudioHUD.gd" type="Script" id=9]
-[ext_resource path="res://scenes/models/DifficultyHUD.gd" type="Script" id=10]
+[ext_resource path="res://sounds/bensound-house.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/error_003.wav" type="AudioStream" id=9]
+[ext_resource path="res://scenes/models/GameOverHUD.gd" type="Script" id=10]
+[ext_resource path="res://scenes/menu/Main.gd" type="Script" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -39,60 +40,68 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 70
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 70
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 70
 outline_color = Color( 0.968627, 0.980392, 0.980392, 1 )
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 70
 outline_color = Color( 0.968627, 0.980392, 0.980392, 1 )
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=15]
 size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 70
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=17]
+size = 20
+font_data = ExtResource( 5 )
+
 [node name="Main" type="Node2D"]
-script = ExtResource( 8 )
+script = ExtResource( 11 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -102,13 +111,13 @@ __meta__ = {
 }
 
 [node name="WelcomeHUD" type="CanvasLayer" parent="."]
-script = ExtResource( 6 )
+script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="GameName" type="Label" parent="WelcomeHUD"]
-modulate = Color( 0.580392, 0.298039, 0.298039, 1 )
+modulate = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
 margin_left = 380.0
 margin_top = 150.0
 margin_right = 648.0
@@ -161,7 +170,7 @@ __meta__ = {
 
 [node name="OptionName" type="Label" parent="WelcomeHUD/OptionsHUD"]
 visible = false
-modulate = Color( 0.580392, 0.298039, 0.298039, 1 )
+modulate = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
 margin_left = 366.507
 margin_top = 150.0
 margin_right = 679.507
@@ -197,14 +206,13 @@ __meta__ = {
 }
 
 [node name="DifficultyHUD" type="CanvasLayer" parent="WelcomeHUD/OptionsHUD"]
-script = ExtResource( 10 )
+script = ExtResource( 6 )
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="DifficultyLabel" type="Label" parent="WelcomeHUD/OptionsHUD/DifficultyHUD"]
 visible = false
-modulate = Color( 0.580392, 0.298039, 0.298039, 1 )
 margin_left = 312.535
 margin_top = 149.364
 margin_right = 728.535
@@ -256,11 +264,10 @@ __meta__ = {
 }
 
 [node name="AudioHUD" type="CanvasLayer" parent="WelcomeHUD/OptionsHUD"]
-script = ExtResource( 9 )
+script = ExtResource( 3 )
 
 [node name="AudioLabel" type="Label" parent="WelcomeHUD/OptionsHUD/AudioHUD"]
 visible = false
-modulate = Color( 0.580392, 0.298039, 0.298039, 1 )
 margin_left = 405.0
 margin_top = 151.0
 margin_right = 634.0
@@ -309,10 +316,41 @@ __meta__ = {
 }
 
 [node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 8 )
 
 [node name="GamerOverSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 9 )
+
+[node name="GameOverHUD" type="CanvasLayer" parent="."]
+script = ExtResource( 10 )
+
+[node name="GameOver" type="Label" parent="GameOverHUD"]
+visible = false
+modulate = Color( 0.0361328, 0.0354271, 0.0354271, 1 )
+anchor_right = 0.533
+margin_left = 320.0
+margin_top = 220.0
+margin_right = 178.208
+margin_bottom = 305.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "game over"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="GameOverHUD"]
+visible = false
+margin_left = 494.45
+margin_top = 343.353
+margin_right = 574.45
+margin_bottom = 387.353
+custom_fonts/font = SubResource( 17 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="WelcomeHUD/StartGame" to="." method="_on_StartGame_pressed"]
 [connection signal="pressed" from="WelcomeHUD/OptionsButton" to="WelcomeHUD" method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="WelcomeHUD/OptionsHUD/BackButton" to="WelcomeHUD" method="_on_BackButton_pressed"]
@@ -323,3 +361,4 @@ stream = ExtResource( 3 )
 [connection signal="pressed" from="WelcomeHUD/OptionsHUD/DifficultyHUD/Hard" to="WelcomeHUD/OptionsHUD" method="_on_Hard_pressed"]
 [connection signal="pressed" from="WelcomeHUD/OptionsHUD/AudioHUD/BackgroundSoundBtn" to="WelcomeHUD/OptionsHUD" method="_on_BackgroundSoundBtn_pressed"]
 [connection signal="pressed" from="WelcomeHUD/OptionsHUD/AudioHUD/BackButtonAudio" to="WelcomeHUD/OptionsHUD" method="_on_BackButtonAudio_pressed"]
+[connection signal="pressed" from="GameOverHUD/Menu" to="." method="_on_Menu_pressed"]
