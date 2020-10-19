@@ -20,9 +20,12 @@ func collide_with(collision : KinematicCollision2D, collider : KinematicBody2D):
 		canTriggerFalling = false
 		
 func _fall():
-	falling = true
 	velocity = Vector2.ZERO
-
+	$ShakeAnimation.play("PlatformAnimation")
+	yield(get_tree().create_timer(.5), "timeout")
+	$ShakeAnimation.stop()
+	falling = true
+	
 func _on_PlatformTimer_timeout():
 	_fall() 
 	
