@@ -28,17 +28,20 @@ position = Vector2( 45.3571, 551.845 )
 [node name="Platform" parent="." instance=ExtResource( 4 )]
 position = Vector2( 196.548, 530.427 )
 SPEED = -9999
+playFallingAnimation = false
 
 [node name="Platform2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 364.117, 311.201 )
 SPEED = -6000
+playFallingAnimation = false
 
 [node name="Platform3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 617.361, 207.887 )
 SPEED = -6000
+playFallingAnimation = false
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
-position = Vector2( 871.865, 40.4425 )
+position = Vector2( 871.865, 39.4986 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 3 )]

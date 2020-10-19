@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var SPEED = 4000
+export var playFallingAnimation = true
 
 var canTriggerFalling = true
 var falling = false
@@ -21,9 +22,10 @@ func collide_with(collision : KinematicCollision2D, collider : KinematicBody2D):
 		
 func _fall():
 	velocity = Vector2.ZERO
-	$ShakeAnimation.play("PlatformAnimation")
-	yield(get_tree().create_timer(.5), "timeout")
-	$ShakeAnimation.stop()
+	if (playFallingAnimation):
+		$ShakeAnimation.play("PlatformAnimation")
+		yield(get_tree().create_timer(.5), "timeout")
+		$ShakeAnimation.stop()
 	falling = true
 	
 func _on_PlatformTimer_timeout():
