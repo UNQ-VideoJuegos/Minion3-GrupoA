@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/models/Interruptor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/levels/Level1.gd" type="Script" id=6]
+[ext_resource path="res://scenes/models/Portal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/levels/Level2.tscn" type="PackedScene" id=8]
 
 [node name="Level1" type="Node2D"]
 position = Vector2( -21.4102, -82.0968 )
@@ -61,3 +63,8 @@ scale = Vector2( 1.46148, 1.53358 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 146.107, 596.902 )
 scale = Vector2( 0.9, 0.9 )
+
+[node name="Portal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1027.05, 544.394 )
+scale = Vector2( 0.5, 0.5 )
+next_scene = ExtResource( 8 )

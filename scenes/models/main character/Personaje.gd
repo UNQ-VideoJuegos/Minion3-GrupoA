@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal health_updated(health)
+signal killed()
+
 export  var color = Color.white
 export  var speed = 300.0
 export  var jump_force = 400.0
@@ -8,16 +11,18 @@ export (PackedScene) var Bullet # recordar inicializar en el inspector
 export (float) var gun_cooldown = 0.2
 export (int) var dash_impulse = 60
 export (float) var dash_cooldown = 2
+export (float) var max_health = 100
+
+onready var health = max_health setget _set_health
+onready var invulnerability_timer = $invulnerabilityTimer
+onready var effects_animation = $Body/EffectsAnimation
 
 const FLOOR_NORMAL = Vector2.UP
 var velocity = Vector2.ZERO
-
 var can_shoot = true
 var can_dash = true
 var dash_direction : Vector2 = Vector2.RIGHT
-
 var jump_intents = 2
-
 
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
@@ -48,7 +53,7 @@ func _physics_process(delta):
 	velocity = calculate_move(velocity,direction,is_jump_interrupted)
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	_handleCollision()
-	print(can_dash)
+	#print(can_dash)
 
 
 func jump():
@@ -107,5 +112,31 @@ func _on_GunTimer_timeout():
 func _on_Area2D_area_entered(area): # codigo de ejemplo
 	position.y *= area.get_gravity_vector().y
 
+func damage(amount):
+	if invulnerability_timer.is_stopped():
+		invulnerability_timer.start()
+		_set_health(health - amount)
+		effects_animation.play("damage")
+		effects_animation.queue("flash")
 
+func kill():
+	print("kill")
 
+func _set_health(value):
+	var prev_health = health
+	health = clamp(value, 0, max_health)
+	if health != prev_health:
+		emit_signal("health_updated", health)
+		if health == 0:
+			kill()
+			emit_signal("killed")
+
+func _on_invulnerabilityTimer_timeout():
+	effects_animation.play("rest")
+
+func _on_lava_body_entered(body):
+	if body.get_name() == "Player":
+		damage(100)
+
+func _on_Player_killed():
+	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
