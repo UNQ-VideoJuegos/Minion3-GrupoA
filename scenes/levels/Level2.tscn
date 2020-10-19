@@ -71,17 +71,17 @@ scale = Vector2( 1.5, 1.5 )
 position = Vector2( 45.3571, 551.845 )
 
 [node name="Platform" parent="." instance=ExtResource( 4 )]
-position = Vector2( 196.548, 530.427 )
+position = Vector2( 240, 536 )
 SPEED = -9999
 playFallingAnimation = false
 
 [node name="Platform2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 364.117, 311.201 )
+position = Vector2( 464, 320 )
 SPEED = -6000
 playFallingAnimation = false
 
 [node name="Platform3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 617.361, 207.887 )
+position = Vector2( 720, 208 )
 SPEED = -6000
 playFallingAnimation = false
 

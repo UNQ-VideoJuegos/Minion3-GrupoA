@@ -117,7 +117,7 @@ __meta__ = {
 }
 
 [node name="GameName" type="Label" parent="WelcomeHUD"]
-modulate = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
 margin_left = 380.0
 margin_top = 150.0
 margin_right = 648.0
@@ -170,7 +170,7 @@ __meta__ = {
 
 [node name="OptionName" type="Label" parent="WelcomeHUD/OptionsHUD"]
 visible = false
-modulate = Color( 0.0313726, 0.0313726, 0.0313726, 1 )
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
 margin_left = 366.507
 margin_top = 150.0
 margin_right = 679.507
@@ -213,12 +213,13 @@ __meta__ = {
 
 [node name="DifficultyLabel" type="Label" parent="WelcomeHUD/OptionsHUD/DifficultyHUD"]
 visible = false
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
 margin_left = 312.535
 margin_top = 149.364
 margin_right = 728.535
 margin_bottom = 234.364
 custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Difficulty"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -268,12 +269,13 @@ script = ExtResource( 3 )
 
 [node name="AudioLabel" type="Label" parent="WelcomeHUD/OptionsHUD/AudioHUD"]
 visible = false
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
 margin_left = 405.0
 margin_top = 151.0
 margin_right = 634.0
 margin_bottom = 236.0
 custom_fonts/font = SubResource( 12 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Audio"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -326,14 +328,14 @@ script = ExtResource( 10 )
 
 [node name="GameOver" type="Label" parent="GameOverHUD"]
 visible = false
-modulate = Color( 0.0361328, 0.0354271, 0.0354271, 1 )
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
 anchor_right = 0.533
 margin_left = 320.0
 margin_top = 220.0
 margin_right = 178.208
 margin_bottom = 305.0
 custom_fonts/font = SubResource( 16 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.992157, 0.988235, 0.988235, 1 )
 text = "game over"
 uppercase = true
 __meta__ = {
