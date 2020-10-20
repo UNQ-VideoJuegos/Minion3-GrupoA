@@ -97,7 +97,7 @@ rotation = 3.14159
 scale = Vector2( 15, 1 )
 color = Color( 0.976471, 0.239216, 0.0196078, 1 )
 
-[node name="Portal" parent="." instance=ExtResource( 8 )]
+[node name="TransportVehicle" parent="." instance=ExtResource( 8 )]
 position = Vector2( 5996.2, 2479.51 )
 scale = Vector2( 0.5, 0.5 )
 next_scene = ExtResource( 9 )
