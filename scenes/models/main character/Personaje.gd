@@ -28,6 +28,7 @@ func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	$DashTimer.wait_time = dash_cooldown
 	modulate = Color.orange
+	$AnimatedSprite.play("idle")
 
 func shoot():
 	if can_shoot:
@@ -45,6 +46,7 @@ func _shoot_bullet():
 	
 func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
+	
 	var is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction = control()
 	direction.y = jump()
@@ -53,6 +55,14 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("dash"): 
 		direction = dash()
 	velocity = calculate_move(velocity,direction,is_jump_interrupted)
+	
+	if velocity.x != 0 and is_on_floor():
+		$AnimatedSprite.animation = "idle"
+	elif velocity.y < 0 or velocity.x != 0 and !is_on_floor():
+		$AnimatedSprite.animation = "jump"
+	else:
+		$AnimatedSprite.animation = "idle"
+		
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	_handleCollision()
 	
@@ -72,11 +82,11 @@ func control():
 	if Input.is_action_pressed("move_left"):
 		dir.x = -1.0
 		dash_direction = Vector2.LEFT
-		$Sprite.flip_h = true
+		$AnimatedSprite.flip_h = true
 	if Input.is_action_pressed("move_right"):
 		dir.x = 1.0
 		dash_direction = Vector2.RIGHT
-		$Sprite.flip_h = false
+		$AnimatedSprite.flip_h = false
 	return dir
 
 func dash():
@@ -110,9 +120,6 @@ func _on_DashTimer_timeout():
 func _on_GunTimer_timeout():
 	can_shoot = true
 
-
-func _on_Area2D_area_entered(area): # codigo de ejemplo
-	position.y *= area.get_gravity_vector().y
 
 func damage(amount):
 	if invulnerability_timer.is_stopped():

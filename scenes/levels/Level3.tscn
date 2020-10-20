@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/models/Interruptor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/models/Floor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=6]
 [ext_resource path="res://assets/tiles/1bitpack_kenney_1.1/Tilesheet/colored.png" type="Texture" id=7]
 [ext_resource path="res://scenes/models/Portal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/menu/Fin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/levels/Level3.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1009.24, 10 )
@@ -51,7 +53,11 @@ extents = Vector2( 1009.24, 10 )
 1/shapes = [  ]
 1/z_index = 0
 
-[node name="Level2" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.2842, 13.0444 )
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
 position = Vector2( 936.024, 119.877 )
@@ -65,22 +71,12 @@ scale = Vector2( 1.5, 1.5 )
 position = Vector2( 69.1413, 76.1622 )
 
 [node name="Platform" parent="." instance=ExtResource( 4 )]
-position = Vector2( 263.784, 545.514 )
-SPEED = -9999
+position = Vector2( 289.011, 464.788 )
+SPEED = -30000
 playFallingAnimation = false
 
 [node name="Platform2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 375.999, 369.947 )
-SPEED = -6000
-playFallingAnimation = false
-
-[node name="Platform3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 553.511, 512.437 )
-SPEED = -6000
-playFallingAnimation = false
-
-[node name="Platform4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 767.568, 393.516 )
+position = Vector2( 428.134, 142.905 )
 SPEED = -6000
 playFallingAnimation = false
 
@@ -89,7 +85,7 @@ position = Vector2( 871.865, 39.4986 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 793.913, 341.313 )
+position = Vector2( 810.731, 38.5904 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Lava" type="Area2D" parent="."]
@@ -117,4 +113,26 @@ color = Color( 0.976471, 0.239216, 0.0196078, 1 )
 position = Vector2( 1008, 88 )
 scale = Vector2( 0.5, 0.5 )
 next_scene = ExtResource( 9 )
+
+[node name="Obstaculos" type="Node" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Obstaculos"]
+position = Vector2( 159.987, 108.546 )
+collision_layer = 32
+collision_mask = 3
+mode = 2
+mass = 5.0
+can_sleep = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Obstaculos/RigidBody2D"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 64.8549, 129.155, 13.2368, 12.937 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstaculos/RigidBody2D"]
+shape = SubResource( 3 )
 [connection signal="body_entered" from="Lava" to="Player" method="_on_lava_body_entered"]

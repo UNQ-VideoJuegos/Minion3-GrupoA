@@ -44,11 +44,11 @@ position = Vector2( 916.055, 508.401 )
 scale = Vector2( 1.8074, 2.61704 )
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
-position = Vector2( 816.672, 418.562 )
+position = Vector2( 818.172, 412.562 )
 scale = Vector2( 4, 4 )
 
 [node name="Door2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 816.711, 98.6255 )
+position = Vector2( 817.711, 98.7892 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 5 )]
