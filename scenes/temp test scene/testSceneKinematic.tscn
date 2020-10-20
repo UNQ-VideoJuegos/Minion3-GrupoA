@@ -46,5 +46,4 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 207.889, 144.25 )
-jump_force = 500.0
+position = Vector2( 250.316, 261.629 )

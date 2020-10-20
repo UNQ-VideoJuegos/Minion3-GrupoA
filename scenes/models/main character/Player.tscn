@@ -9,7 +9,7 @@ extents = Vector2( 15.7267, 19.5464 )
 
 [sub_resource type="RayShape2D" id=2]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "damage"
 length = 0.1
 step = 0.05
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "flash"
 length = 0.2
 loop = true
@@ -43,8 +43,7 @@ tracks/0/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "rest"
+[sub_resource type="Animation" id=5]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -108,9 +107,9 @@ one_shot = true
 [node name="Body" type="Node2D" parent="."]
 
 [node name="EffectsAnimation" type="AnimationPlayer" parent="Body"]
-anims/damage = SubResource( 4 )
-anims/flash = SubResource( 5 )
-anims/rest = SubResource( 3 )
+anims/damage = SubResource( 3 )
+anims/flash = SubResource( 4 )
+anims/rest = SubResource( 5 )
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
 [connection signal="area_entered" from="DetectorArea2D" to="." method="_on_Area2D_area_entered"]

@@ -33,13 +33,15 @@ func shoot():
 	if can_shoot:
 		can_shoot = false
 		$GunTimer.start()
+		print("shooting")
 		_shoot_bullet()
 
-func _shoot_bullet():
+func _shoot_bullet(): 
 	var dir = Vector2(1,0).rotated($GunPosition.global_rotation)
 	var b = Bullet.instance()
-	add_child(b)
-	b.start($GunPosition.position, dir)
+	owner.add_child(b)
+	b.start($GunPosition.global_position,dir)
+	print("_shoot_bullet()")
 	
 func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
@@ -48,12 +50,12 @@ func _physics_process(delta):
 	direction.y = jump()
 	if Input.is_action_just_pressed("click"):
 		shoot()
-	if Input.is_action_just_pressed("dash"): # posible agregado o no
+	if Input.is_action_just_pressed("dash"): 
 		direction = dash()
 	velocity = calculate_move(velocity,direction,is_jump_interrupted)
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	_handleCollision()
-	#print(can_dash)
+	
 
 
 func jump():

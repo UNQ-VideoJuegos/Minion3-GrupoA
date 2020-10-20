@@ -19,6 +19,10 @@ config/name="Minion 3"
 run/main_scene="res://scenes/menu/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://scenes/Scripts/Global.gd"
+
 [display]
 
 window/size/always_on_top=true

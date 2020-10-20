@@ -10,61 +10,59 @@
 [ext_resource path="res://scenes/levels/Level2.tscn" type="PackedScene" id=8]
 
 [node name="Level1" type="Node2D"]
-position = Vector2( -21.4102, -82.0968 )
 script = ExtResource( 6 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 409.235, 559.697 )
+position = Vector2( 383.779, 483.33 )
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 553.548, 498.336 )
+position = Vector2( 528.092, 421.968 )
 
 [node name="Platform3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 465.784, 420.921 )
+position = Vector2( 440.328, 344.553 )
 
 [node name="Platform4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 317.738, 354.291 )
+position = Vector2( 292.282, 277.923 )
 
 [node name="Platform5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 674.941, 321.107 )
+position = Vector2( 649.485, 244.739 )
 
 [node name="Floor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 110.889, 519.23 )
+position = Vector2( 177.433, 568.862 )
 scale = Vector2( 3.05506, 2.61704 )
 
 [node name="Floor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 984.587, 357.812 )
+position = Vector2( 909.131, 223.444 )
 scale = Vector2( -2.08555, 5.24815 )
 
 [node name="Floor3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 75.8875, 176.839 )
+position = Vector2( 110.432, 180.471 )
 scale = Vector2( 1.8293, 2.82954 )
 
 [node name="Floor4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 881.511, 140.768 )
+position = Vector2( 916.055, 508.401 )
 scale = Vector2( 1.8074, 2.61704 )
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
-position = Vector2( 842.128, 494.93 )
+position = Vector2( 816.672, 418.562 )
 scale = Vector2( 4, 4 )
 
 [node name="Door2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 842.167, 174.993 )
+position = Vector2( 816.711, 98.6255 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 57.5217, 132.096 )
+position = Vector2( 32.0659, 55.7285 )
 scale = Vector2( 1.46148, 1.53358 )
 
 [node name="Interruptor2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 989.11, 222.083 )
+position = Vector2( 963.654, 145.715 )
 scale = Vector2( 1.46148, 1.53358 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 146.107, 596.902 )
-scale = Vector2( 0.9, 0.9 )
-
 [node name="Portal" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1027.05, 544.394 )
+position = Vector2( 1001.59, 468.026 )
 scale = Vector2( 0.5, 0.5 )
 next_scene = ExtResource( 8 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 190.675, 459.721 )
