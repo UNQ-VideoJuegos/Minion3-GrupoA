@@ -10,9 +10,7 @@
 [ext_resource path="res://scenes/models/TransportVehicle.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/menu/Fin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/levels/Level3.gd" type="Script" id=10]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1009.24, 10 )
+[ext_resource path="res://scenes/models/Lava.tscn" type="PackedScene" id=11]
 
 [sub_resource type="TileSet" id=2]
 0/name = "colored.png 0"
@@ -60,7 +58,7 @@ extents = Vector2( 13.2842, 13.0444 )
 script = ExtResource( 10 )
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 936.024, 119.877 )
+position = Vector2( 5924.22, 2511.39 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Floor3" parent="." instance=ExtResource( 5 )]
@@ -71,32 +69,22 @@ scale = Vector2( 1.5, 1.5 )
 position = Vector2( 69.1413, 76.1622 )
 
 [node name="Platform" parent="." instance=ExtResource( 4 )]
-position = Vector2( 289.011, 464.788 )
+position = Vector2( 940.413, -207.971 )
 SPEED = -30000
 playFallingAnimation = false
 
 [node name="Platform2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 428.134, 142.905 )
+position = Vector2( 1263.74, -209.493 )
 SPEED = -6000
 playFallingAnimation = false
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
-position = Vector2( 871.865, 39.4986 )
+position = Vector2( 5860.06, 2431.01 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 810.731, 38.5904 )
+position = Vector2( 5537.52, 2473.68 )
 scale = Vector2( 1.5, 1.5 )
-
-[node name="Lava" type="Area2D" parent="."]
-position = Vector2( 1013.82, 613.665 )
-collision_mask = 2
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
-shape = SubResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -109,9 +97,9 @@ rotation = 3.14159
 scale = Vector2( 15, 1 )
 color = Color( 0.976471, 0.239216, 0.0196078, 1 )
 
-[node name="TransportVehicle" parent="." instance=ExtResource( 8 )]
-position = Vector2( 968.265, 90.6171 )
-scale = Vector2( 3, 3 )
+[node name="Portal" parent="." instance=ExtResource( 8 )]
+position = Vector2( 5996.2, 2479.51 )
+scale = Vector2( 0.5, 0.5 )
 next_scene = ExtResource( 9 )
 
 [node name="Obstaculos" type="Node" parent="."]
@@ -135,4 +123,7 @@ region_rect = Rect2( 64.8549, 129.155, 13.2368, 12.937 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstaculos/RigidBody2D"]
 shape = SubResource( 3 )
-[connection signal="body_entered" from="Lava" to="Player" method="_on_lava_body_entered"]
+
+[node name="Lava" parent="." instance=ExtResource( 11 )]
+position = Vector2( 506.058, 572.212 )
+scale = Vector2( 72.0471, 12.6565 )

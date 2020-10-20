@@ -34,7 +34,6 @@ func shoot():
 	if can_shoot:
 		can_shoot = false
 		$GunTimer.start()
-		print("shooting")
 		_shoot_bullet()
 
 func _shoot_bullet(): 
@@ -42,7 +41,7 @@ func _shoot_bullet():
 	var b = Bullet.instance()
 	owner.add_child(b)
 	b.start($GunPosition.global_position,dir)
-	print("_shoot_bullet()")
+	
 	
 func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
@@ -128,9 +127,9 @@ func damage(amount):
 		effects_animation.play("damage")
 		effects_animation.queue("flash")
 
-func kill():
-	print("kill")
-
+func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
+	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn") 
+	
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)
@@ -142,3 +141,5 @@ func _set_health(value):
 func _on_invulnerabilityTimer_timeout():
 	effects_animation.play("rest")
 
+func _on_Player_killed():
+	kill()
