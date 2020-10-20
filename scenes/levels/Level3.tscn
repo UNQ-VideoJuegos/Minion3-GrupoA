@@ -60,7 +60,7 @@ extents = Vector2( 13.2842, 13.0444 )
 script = ExtResource( 10 )
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 936.024, 119.877 )
+position = Vector2( 5924.22, 2511.39 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Floor3" parent="." instance=ExtResource( 5 )]
@@ -71,21 +71,21 @@ scale = Vector2( 1.5, 1.5 )
 position = Vector2( 69.1413, 76.1622 )
 
 [node name="Platform" parent="." instance=ExtResource( 4 )]
-position = Vector2( 289.011, 464.788 )
+position = Vector2( 940.413, -207.971 )
 SPEED = -30000
 playFallingAnimation = false
 
 [node name="Platform2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 428.134, 142.905 )
+position = Vector2( 1263.74, -209.493 )
 SPEED = -6000
 playFallingAnimation = false
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
-position = Vector2( 871.865, 39.4986 )
+position = Vector2( 5860.06, 2431.01 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 810.731, 38.5904 )
+position = Vector2( 5537.52, 2473.68 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Lava" type="Area2D" parent="."]
@@ -110,7 +110,7 @@ scale = Vector2( 15, 1 )
 color = Color( 0.976471, 0.239216, 0.0196078, 1 )
 
 [node name="Portal" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1008, 88 )
+position = Vector2( 5996.2, 2479.51 )
 scale = Vector2( 0.5, 0.5 )
 next_scene = ExtResource( 9 )
 
