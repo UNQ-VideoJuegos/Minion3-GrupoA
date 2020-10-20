@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/models/Floor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=6]
 [ext_resource path="res://assets/tiles/1bitpack_kenney_1.1/Tilesheet/colored.png" type="Texture" id=7]
-[ext_resource path="res://scenes/models/Portal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/models/TransportVehicle.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/menu/Fin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/levels/Level3.gd" type="Script" id=10]
 
@@ -109,9 +109,9 @@ rotation = 3.14159
 scale = Vector2( 15, 1 )
 color = Color( 0.976471, 0.239216, 0.0196078, 1 )
 
-[node name="Portal" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1008, 88 )
-scale = Vector2( 0.5, 0.5 )
+[node name="TransportVehicle" parent="." instance=ExtResource( 8 )]
+position = Vector2( 968.265, 90.6171 )
+scale = Vector2( 3, 3 )
 next_scene = ExtResource( 9 )
 
 [node name="Obstaculos" type="Node" parent="."]

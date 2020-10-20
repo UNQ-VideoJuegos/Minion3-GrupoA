@@ -138,14 +138,7 @@ func _set_health(value):
 		emit_signal("health_updated", health)
 		if health == 0:
 			kill()
-			emit_signal("killed")
 
 func _on_invulnerabilityTimer_timeout():
 	effects_animation.play("rest")
 
-func _on_lava_body_entered(body):
-	if body.get_name() == "Player":
-		damage(100)
-
-func _on_Player_killed():
-	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")

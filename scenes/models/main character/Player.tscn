@@ -4,48 +4,47 @@
 [ext_resource path="res://scenes/models/Bullets/Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 256, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 4 )
 region = Rect2( 16, 256, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 4 )
 region = Rect2( 32, 256, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 4 )
 region = Rect2( 48, 256, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 4 )
 region = Rect2( 64, 272, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 4 )
 region = Rect2( 80, 272, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "jump",
 "speed": 2.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 16.3883, 16.3966 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "damage"
+[sub_resource type="Animation" id=9]
 length = 0.1
 step = 0.05
 tracks/0/type = "value"
@@ -61,8 +60,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "flash"
+[sub_resource type="Animation" id=10]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -78,7 +76,7 @@ tracks/0/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=11]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -112,12 +110,12 @@ Bullet = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
-frames = SubResource( 11 )
+frames = SubResource( 7 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.28229, 3.66628 )
-shape = SubResource( 1 )
+shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="GunPosition" type="Position2D" parent="."]
@@ -135,9 +133,9 @@ one_shot = true
 [node name="Body" type="Node2D" parent="."]
 
 [node name="EffectsAnimation" type="AnimationPlayer" parent="Body"]
-anims/damage = SubResource( 2 )
-anims/flash = SubResource( 3 )
-anims/rest = SubResource( 4 )
+anims/damage = SubResource( 9 )
+anims/flash = SubResource( 10 )
+anims/rest = SubResource( 11 )
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
