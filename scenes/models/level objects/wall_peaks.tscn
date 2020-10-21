@@ -1,17 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=1]
+[ext_resource path="res://scenes/models/level objects/peak.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.98222, 1.70572 )
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7.54196, 1.54211 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 31.9884, 4.75951 )
 
 [node name="wall_peaks" type="StaticBody2D"]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -19,143 +17,149 @@ region_enabled = true
 region_rect = Rect2( -0.0363903, 143.707, 64.2561, 10.1724 )
 
 [node name="Node2D" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Node2D"]
-position = Vector2( -22.9107, -6.37094 )
+[node name="peak" type="Area2D" parent="Node2D"]
+position = Vector2( -22.3244, -6.15274 )
+collision_mask = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Node2D/peak"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192.316, 44.5219, 15.6785, 3.59834 )
+region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak"]
+shape = SubResource( 3 )
+
+[node name="peak2" type="Area2D" parent="Node2D"]
+position = Vector2( -7.23633, -6.15274 )
+collision_mask = 2
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
-position = Vector2( -22.9107, -6.37094 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite2" type="Sprite" parent="Node2D"]
-position = Vector2( -7.33677, -6.37094 )
+[node name="Sprite" type="Sprite" parent="Node2D/peak2"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192.316, 44.5219, 15.6785, 3.59834 )
+region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak2"]
+shape = SubResource( 3 )
+
+[node name="peak3" type="Area2D" parent="Node2D"]
+position = Vector2( 7.85173, -6.15274 )
+collision_mask = 2
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D"]
-position = Vector2( -7.33677, -6.37094 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite3" type="Sprite" parent="Node2D"]
-position = Vector2( 8.47312, -6.37094 )
+[node name="Sprite" type="Sprite" parent="Node2D/peak3"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192.316, 44.5219, 15.6785, 3.59834 )
+region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak3"]
+shape = SubResource( 3 )
+
+[node name="peak4" type="Area2D" parent="Node2D"]
+position = Vector2( 22.9398, -6.15274 )
+collision_mask = 2
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D"]
-position = Vector2( 8.47312, -6.37094 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite4" type="Sprite" parent="Node2D"]
-position = Vector2( 24.047, -6.37094 )
+[node name="Sprite" type="Sprite" parent="Node2D/peak4"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192.316, 44.5219, 15.6785, 3.59834 )
-__meta__ = {
-"_edit_group_": true
-}
+region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D"]
-position = Vector2( 24.047, -6.37094 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak4"]
+shape = SubResource( 3 )
 
-[node name="Sprite5" type="Sprite" parent="Node2D"]
-position = Vector2( -23.1519, 6.4689 )
+[node name="peak5" type="Area2D" parent="Node2D"]
+position = Vector2( -22.3244, 6.54647 )
 rotation = 3.14159
+collision_mask = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Node2D/peak5"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192.316, 44.5219, 15.6785, 3.59834 )
+region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak5"]
+shape = SubResource( 3 )
+
+[node name="peak6" type="Area2D" parent="Node2D"]
+position = Vector2( -7.23633, 6.54647 )
+rotation = 3.14159
+collision_mask = 2
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Node2D"]
-position = Vector2( -23.1519, 6.4689 )
-rotation = 3.14159
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite6" type="Sprite" parent="Node2D"]
-position = Vector2( -7.57798, 6.4689 )
-rotation = 3.14159
+[node name="Sprite" type="Sprite" parent="Node2D/peak6"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192.316, 44.5219, 15.6785, 3.59834 )
+region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak6"]
+shape = SubResource( 3 )
+
+[node name="peak7" type="Area2D" parent="Node2D"]
+position = Vector2( 7.85173, 6.54647 )
+rotation = 3.14159
+collision_mask = 2
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Node2D"]
-position = Vector2( -7.57798, 6.4689 )
-rotation = 3.14159
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite7" type="Sprite" parent="Node2D"]
-position = Vector2( 8.23191, 6.4689 )
-rotation = 3.14159
+[node name="Sprite" type="Sprite" parent="Node2D/peak7"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192.316, 44.5219, 15.6785, 3.59834 )
+region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak7"]
+shape = SubResource( 3 )
+
+[node name="peak8" type="Area2D" parent="Node2D"]
+position = Vector2( 22.9398, 6.54647 )
+rotation = 3.14159
+collision_mask = 2
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Node2D"]
-position = Vector2( 8.23191, 6.4689 )
-rotation = 3.14159
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite8" type="Sprite" parent="Node2D"]
-position = Vector2( 23.8058, 6.4689 )
-rotation = 3.14159
+[node name="Sprite" type="Sprite" parent="Node2D/peak8"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192.316, 44.5219, 15.6785, 3.59834 )
-__meta__ = {
-"_edit_group_": true
-}
+region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Node2D"]
-position = Vector2( 23.8058, 6.4689 )
-rotation = 3.14159
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak8"]
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 2 )
+[connection signal="body_entered" from="Node2D/peak" to="Node2D/peak" method="_on_peak_body_entered"]
+[connection signal="body_entered" from="Node2D/peak2" to="Node2D/peak2" method="_on_peak_body_entered"]
+[connection signal="body_entered" from="Node2D/peak3" to="Node2D/peak3" method="_on_peak_body_entered"]
+[connection signal="body_entered" from="Node2D/peak4" to="Node2D/peak4" method="_on_peak_body_entered"]
+[connection signal="body_entered" from="Node2D/peak5" to="Node2D/peak5" method="_on_peak_body_entered"]
+[connection signal="body_entered" from="Node2D/peak6" to="Node2D/peak6" method="_on_peak_body_entered"]
+[connection signal="body_entered" from="Node2D/peak7" to="Node2D/peak7" method="_on_peak_body_entered"]
+[connection signal="body_entered" from="Node2D/peak8" to="Node2D/peak8" method="_on_peak_body_entered"]

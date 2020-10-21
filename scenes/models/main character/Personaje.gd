@@ -128,8 +128,14 @@ func damage(amount):
 		effects_animation.queue("flash")
 
 func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
+	$GunTimer.stop()
+	$Camera2D.current = false
+	hide() # no es la mejor solucion porque se puede seguir usando el personaje
+	yield(get_tree().create_timer(1.0), "timeout")
+	queue_free()
 	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn") 
-	
+
+
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)

@@ -7,6 +7,8 @@ var canTriggerFalling = true
 var falling = false
 var velocity = Vector2()
 
+func _ready():
+	add_to_group("plataform")	
 
 func _physics_process(delta):
 	if (falling):
@@ -27,6 +29,9 @@ func _fall():
 		yield(get_tree().create_timer(.5), "timeout")
 		$ShakeAnimation.stop()
 	falling = true
+	
+func destroy():
+	queue_free()
 	
 func _on_PlatformTimer_timeout():
 	_fall() 

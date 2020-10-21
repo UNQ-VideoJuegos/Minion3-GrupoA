@@ -1,17 +1,19 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/models/Interruptor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/models/Floor.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=6]
+[ext_resource path="res://scenes/models/level objects/turret.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/tiles/1bitpack_kenney_1.1/Tilesheet/colored.png" type="Texture" id=7]
 [ext_resource path="res://scenes/models/TransportVehicle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/models/level objects/wall_peaks.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/levels/Level3.gd" type="Script" id=10]
 [ext_resource path="res://scenes/models/Lava.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/menu/Fin.tscn" type="PackedScene" id=12]
 
-[sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=1]
 0/name = "colored.png 0"
 0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
@@ -50,78 +52,452 @@
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 13.2842, 13.0444 )
-
 [node name="Level3" type="Node2D"]
 script = ExtResource( 10 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 1376.94 ],
+"_edit_vertical_guides_": [ 1709.13 ]
+}
 
-[node name="Floor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 5924.22, 2511.39 )
+[node name="floor" type="Node2D" parent="."]
+
+[node name="Floor" parent="floor" instance=ExtResource( 5 )]
+position = Vector2( 1605.92, 1229.53 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="Floor3" parent="." instance=ExtResource( 5 )]
+[node name="Floor3" parent="floor" instance=ExtResource( 5 )]
 position = Vector2( 88.0921, 147.669 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 69.1413, 76.1622 )
-
-[node name="Platform" parent="." instance=ExtResource( 4 )]
-position = Vector2( 940.413, -207.971 )
-SPEED = -30000
-playFallingAnimation = false
-
-[node name="Platform2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1263.74, -209.493 )
-SPEED = -6000
-playFallingAnimation = false
-
-[node name="Door" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5860.06, 2431.01 )
-scale = Vector2( 3, 4 )
-
-[node name="Interruptor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 5537.52, 2473.68 )
+[node name="Floor4" parent="floor" instance=ExtResource( 5 )]
+position = Vector2( 1378.18, 508.209 )
 scale = Vector2( 1.5, 1.5 )
 
+[node name="Floor5" parent="floor" instance=ExtResource( 5 )]
+position = Vector2( 1380.49, 795.098 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Floor8" parent="floor" instance=ExtResource( 5 )]
+position = Vector2( 1332.61, 795.098 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Floor7" parent="floor" instance=ExtResource( 5 )]
+position = Vector2( 1333.87, 1229.21 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Floor6" parent="floor" instance=ExtResource( 5 )]
+position = Vector2( 1435.27, 1229.42 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 89.3848, 91.4562 )
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+offset = Vector2( 0, -100 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1700
+limit_bottom = 1480
+smoothing_speed = 3.0
+
+[node name="plataformas" type="Node2D" parent="."]
+
+[node name="Platform" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 746.749, 309.762 )
+SPEED = -10000
+playFallingAnimation = false
+
+[node name="Platform3" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 1133.08, 773.762 )
+SPEED = -10000
+playFallingAnimation = false
+
+[node name="Platform5" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 298.272, 775.048 )
+SPEED = -10000
+playFallingAnimation = false
+
+[node name="Platform6" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 717.842, 764.946 )
+SPEED = -10000
+playFallingAnimation = false
+
+[node name="Platform4" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 252.664, 277.693 )
+SPEED = -10000
+playFallingAnimation = false
+
+[node name="Platform2" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 1531.57, 500.567 )
+SPEED = 20000
+playFallingAnimation = false
+
+[node name="Platform7" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 63.2249, 819.634 )
+SPEED = 20000
+playFallingAnimation = false
+
+[node name="Platform11" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 458.477, 1097.03 )
+SPEED = 20000
+playFallingAnimation = false
+
+[node name="Platform12" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 1002.97, 1103.78 )
+SPEED = 20000
+playFallingAnimation = false
+
+[node name="Platform8" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 252.126, 1233.95 )
+SPEED = -10000
+playFallingAnimation = false
+
+[node name="Platform9" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 587.067, 1222.83 )
+SPEED = -10000
+playFallingAnimation = false
+
+[node name="Platform13" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 772.793, 1224.42 )
+SPEED = -10000
+playFallingAnimation = false
+
+[node name="Platform10" parent="plataformas" instance=ExtResource( 4 )]
+position = Vector2( 1163.29, 1233.95 )
+SPEED = -10000
+playFallingAnimation = false
+
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 2 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 25, 25 )
 format = 1
 
-[node name="Floor4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 880.643, 624.841 )
-rotation = 3.14159
-scale = Vector2( 15, 1 )
-color = Color( 0.976471, 0.239216, 0.0196078, 1 )
+[node name="Torretas" type="Node2D" parent="."]
 
-[node name="Obstaculos" type="Node" parent="."]
+[node name="Turret" parent="Torretas" instance=ExtResource( 6 )]
+position = Vector2( 403.686, 14.6378 )
+rotation = 2.7994
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Obstaculos"]
-position = Vector2( 159.987, 108.546 )
-collision_layer = 32
-collision_mask = 3
-mode = 2
-mass = 5.0
-can_sleep = false
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Turret6" parent="Torretas" instance=ExtResource( 6 )]
+position = Vector2( 405.539, 870.341 )
+rotation = 2.7994
 
-[node name="Sprite" type="Sprite" parent="Obstaculos/RigidBody2D"]
+[node name="Turret7" parent="Torretas" instance=ExtResource( 6 )]
+position = Vector2( 1097.17, 877.069 )
+rotation = 3.83401
+
+[node name="Turret2" parent="Torretas" instance=ExtResource( 6 )]
+position = Vector2( 652.574, 14.6378 )
+rotation = 3.45685
+
+[node name="Turret3" parent="Torretas" instance=ExtResource( 6 )]
+position = Vector2( 850.351, 14.6378 )
+rotation = 2.80843
+
+[node name="Turret4" parent="Torretas" instance=ExtResource( 6 )]
+position = Vector2( 1052.62, 14.6378 )
+rotation = 3.43072
+
+[node name="Turret5" parent="Torretas" instance=ExtResource( 6 )]
+position = Vector2( 1318.79, 18.4133 )
+rotation = 3.5834
+
+[node name="Muros" type="Node" parent="."]
+
+[node name="wall_peaks3" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 419.238, 302.772 )
+rotation = 1.5708
 scale = Vector2( 2, 2 )
-texture = ExtResource( 6 )
-region_enabled = true
-region_rect = Rect2( 64.8549, 129.155, 13.2368, 12.937 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstaculos/RigidBody2D"]
-shape = SubResource( 3 )
+[node name="wall_peaks5" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 516.857, 389.242 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks7" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 618.583, 303.465 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks8" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 703.144, 435.502 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks10" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 793.858, 435.502 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks11" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 879.748, 298.164 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks13" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1015.79, 399.242 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks17" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1141.61, 287.135 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks24" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1304.31, 290.911 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks18" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1218.58, 435.502 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks25" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1309.99, 592.477 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks28" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1309.99, 639.567 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks26" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 917.128, 723.069 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks50" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 866.331, 1280.87 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks51" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 370.705, 1282.55 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks27" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 530.254, 723.439 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks39" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 646.333, 884.958 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks40" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 726.423, 884.958 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks49" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1259.55, 1293.63 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks45" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 420.045, 1298.33 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks46" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 500.135, 1298.33 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks47" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 961.711, 1300.12 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks48" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1041.8, 1300.12 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks41" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1156.24, 886.292 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks42" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1236.33, 886.292 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks43" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 200.496, 883.623 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks44" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 280.587, 883.623 )
+rotation = 1.5708
+scale = Vector2( 1.5, 1 )
+
+[node name="wall_peaks19" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1361.04, 350.553 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks20" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1361.04, 224.074 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks21" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1361.04, 97.5946 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="wall_peaks" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 164.816, 543.219 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks4" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 482.675, 543.219 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks6" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 801.374, 543.219 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks9" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1121.76, 543.219 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks31" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 151.361, 1360.57 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks32" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 469.22, 1360.57 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks33" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 787.92, 1360.57 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks34" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1108.3, 1360.57 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks35" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 287.492, 836.229 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks36" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 605.351, 836.229 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks37" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 924.051, 836.229 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks38" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1244.43, 836.229 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks29" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1436.74, 1122.78 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks52" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1442.07, 836.089 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks30" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1545.28, 1122.78 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks12" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 163.247, -19.9465 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks16" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 481.106, -19.9465 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks22" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 799.806, -19.9465 )
+scale = Vector2( 5, 2 )
+
+[node name="wall_peaks23" parent="Muros" instance=ExtResource( 9 )]
+position = Vector2( 1120.19, -19.9465 )
+scale = Vector2( 5, 2 )
 
 [node name="Lava" parent="." instance=ExtResource( 11 )]
-position = Vector2( 3590.56, 3138.43 )
-scale = Vector2( 516.187, 34.6487 )
+position = Vector2( 658.089, 516.772 )
+scale = Vector2( 90, 5 )
+
+[node name="Lava2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 780.074, 817.659 )
+scale = Vector2( 90, 5 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 8 )]
-position = Vector2( 5961.41, 2479.81 )
+position = Vector2( 1643.12, 1197.95 )
 scale = Vector2( 3, 3 )
+next_scene = ExtResource( 12 )
+
+[node name="doors" type="Node2D" parent="."]
+
+[node name="DoorFinal" parent="doors" instance=ExtResource( 1 )]
+position = Vector2( 1543.1, 1146.03 )
+scale = Vector2( 3, 4 )
+
+[node name="Interruptor" parent="doors" instance=ExtResource( 3 )]
+position = Vector2( 747.388, 424.378 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Interruptor2" parent="doors" instance=ExtResource( 3 )]
+position = Vector2( 1358.64, 555.191 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Interruptor3" parent="doors" instance=ExtResource( 3 )]
+position = Vector2( 233.476, 890.259 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Interruptor4" parent="doors" instance=ExtResource( 3 )]
+position = Vector2( 455.417, 1302.1 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Interruptor5" parent="doors" instance=ExtResource( 3 )]
+position = Vector2( 681.273, 877.943 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Interruptor6" parent="doors" instance=ExtResource( 3 )]
+position = Vector2( 994.901, 1293.38 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Interruptor7" parent="doors" instance=ExtResource( 3 )]
+position = Vector2( 1194.67, 887.32 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Door1" parent="doors" instance=ExtResource( 1 )]
+position = Vector2( 1284.86, 424.267 )
+scale = Vector2( 3, 4 )
+
+[node name="Door2" parent="doors" instance=ExtResource( 1 )]
+position = Vector2( 1220.75, 1146.72 )
+scale = Vector2( 3, 4 )
+
+[node name="Door3" parent="doors" instance=ExtResource( 1 )]
+position = Vector2( 1286.21, 1147.21 )
+scale = Vector2( 3, 4 )
+
+[node name="Door4" parent="doors" instance=ExtResource( 1 )]
+position = Vector2( 1466.81, 1146.32 )
+scale = Vector2( 3, 4 )
+
+[node name="Door5" parent="doors" instance=ExtResource( 1 )]
+position = Vector2( 1376.91, 1145.41 )
+scale = Vector2( 3, 4 )
+
+[node name="Door6" parent="doors" instance=ExtResource( 1 )]
+position = Vector2( 1231.42, 712.489 )
+scale = Vector2( 3, 4 )

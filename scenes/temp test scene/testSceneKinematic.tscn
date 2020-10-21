@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/models/level objects/turret.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/models/level objects/wall_peaks.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 528.992, 10 )
@@ -50,9 +51,17 @@ shape = SubResource( 3 )
 position = Vector2( 406.999, 425.863 )
 
 [node name="Turret" parent="." instance=ExtResource( 1 )]
-position = Vector2( 216.066, 420.714 )
+position = Vector2( 216.066, 369.933 )
 rotation = 2.76809
 
 [node name="Turret2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 573.447, 417.351 )
+position = Vector2( 595.719, 384.388 )
 rotation = 3.55138
+
+[node name="wall_peaks" parent="." instance=ExtResource( 3 )]
+position = Vector2( 756.067, 477.723 )
+rotation = 1.5708
+
+[node name="wall_peaks2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 756.067, 542.378 )
+rotation = 1.5708

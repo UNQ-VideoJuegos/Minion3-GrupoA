@@ -107,6 +107,7 @@ tracks/1/keys = {
 collision_layer = 2
 script = ExtResource( 1 )
 Bullet = ExtResource( 3 )
+dash_impulse = 40
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -123,6 +124,7 @@ one_way_collision = true
 [node name="GunTimer" type="Timer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 
 [node name="DashTimer" type="Timer" parent="."]
 

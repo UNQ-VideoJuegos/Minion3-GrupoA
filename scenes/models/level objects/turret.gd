@@ -1,7 +1,7 @@
 extends Area2D
 
 export (PackedScene) var Bullet
-export (float) var cool_down = 0.5
+export (float) var cool_down = 1
 
 var target = null
 var target_dir = Vector2()
@@ -15,7 +15,7 @@ func _process(delta):
 	if target:
 		target_dir = (target.get_global_position() - global_position).normalized()
 		_shoot()
-	print(can_shoot)
+	
 
 func _shoot():
 	if can_shoot:
