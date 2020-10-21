@@ -200,13 +200,13 @@ position = Vector2( 1052.62, 14.6378 )
 rotation = 3.43072
 
 [node name="Turret5" parent="Torretas" instance=ExtResource( 6 )]
-position = Vector2( 1318.79, 18.4133 )
-rotation = 3.5834
+position = Vector2( 1295.63, 32.6677 )
+rotation = 3.86932
 
 [node name="Muros" type="Node" parent="."]
 
 [node name="wall_peaks3" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 419.238, 302.772 )
+position = Vector2( 419.238, 309.899 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
 
@@ -216,7 +216,7 @@ rotation = 1.5708
 scale = Vector2( 2, 2 )
 
 [node name="wall_peaks7" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 618.583, 303.465 )
+position = Vector2( 618.583, 310.592 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
 
@@ -231,7 +231,7 @@ rotation = 1.5708
 scale = Vector2( 2, 2 )
 
 [node name="wall_peaks11" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 879.748, 298.164 )
+position = Vector2( 879.748, 305.291 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
 
@@ -241,12 +241,7 @@ rotation = 1.5708
 scale = Vector2( 2, 2 )
 
 [node name="wall_peaks17" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 1141.61, 287.135 )
-rotation = 1.5708
-scale = Vector2( 2, 2 )
-
-[node name="wall_peaks24" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 1304.31, 290.911 )
+position = Vector2( 1141.61, 306.735 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
 
