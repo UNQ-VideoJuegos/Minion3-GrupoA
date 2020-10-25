@@ -65,6 +65,8 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	_handleCollision()
 	
+	if Input.is_action_just_pressed("reload"):
+		get_tree().reload_current_scene()
 
 
 func jump():
@@ -134,7 +136,6 @@ func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
 	yield(get_tree().create_timer(1.0), "timeout")
 	queue_free()
 	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn") 
-
 
 func _set_health(value):
 	var prev_health = health
