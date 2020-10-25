@@ -14,10 +14,12 @@ extents = Vector2( 13.6148, 0.787012 )
 extents = Vector2( 2.23264, 0.845348 )
 
 [node name="Door" type="Area2D"]
+pause_mode = 1
 position = Vector2( 0, 0.125 )
 script = ExtResource( 3 )
 
 [node name="Door" type="KinematicBody2D" parent="."]
+pause_mode = 1
 position = Vector2( -0.105112, 2.52269 )
 scale = Vector2( 0.999663, 0.647182 )
 z_index = -100

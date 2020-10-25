@@ -7,6 +7,7 @@
 extents = Vector2( 9.10239, 7.3383 )
 
 [node name="TransporterVehicle" type="Area2D"]
+pause_mode = 1
 scale = Vector2( 5.31223, 3.75396 )
 monitorable = false
 script = ExtResource( 2 )

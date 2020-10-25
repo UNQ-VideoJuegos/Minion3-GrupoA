@@ -42,7 +42,6 @@ func _shoot_bullet():
 	owner.add_child(b)
 	b.start($GunPosition.global_position,dir)
 	
-	
 func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
 	
@@ -67,7 +66,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("reload"):
 		get_tree().reload_current_scene()
-
 
 func jump():
 	var dir = 0.0

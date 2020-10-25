@@ -53,6 +53,7 @@
 1/z_index = 0
 
 [node name="Level3" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 1376.94 ],
@@ -90,6 +91,7 @@ position = Vector2( 1435.27, 1229.42 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+pause_mode = 1
 position = Vector2( 89.3848, 91.4562 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
@@ -102,68 +104,82 @@ limit_bottom = 1480
 smoothing_speed = 3.0
 
 [node name="plataformas" type="Node2D" parent="."]
+pause_mode = 1
 
 [node name="Platform" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 746.749, 309.762 )
 SPEED = -10000
 playFallingAnimation = false
 
 [node name="Platform3" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 1133.08, 773.762 )
 SPEED = -10000
 playFallingAnimation = false
 
 [node name="Platform5" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 298.272, 775.048 )
 SPEED = -10000
 playFallingAnimation = false
 
 [node name="Platform6" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 717.842, 764.946 )
 SPEED = -10000
 playFallingAnimation = false
 
 [node name="Platform4" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 252.664, 277.693 )
 SPEED = -10000
 playFallingAnimation = false
 
 [node name="Platform2" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 1531.57, 500.567 )
 SPEED = 20000
 playFallingAnimation = false
 
 [node name="Platform7" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 63.2249, 819.634 )
 SPEED = 20000
 playFallingAnimation = false
 
 [node name="Platform11" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 458.477, 1097.03 )
 SPEED = 20000
 playFallingAnimation = false
 
 [node name="Platform12" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 1002.97, 1103.78 )
 SPEED = 20000
 playFallingAnimation = false
 
 [node name="Platform8" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 252.126, 1233.95 )
 SPEED = -10000
 playFallingAnimation = false
 
 [node name="Platform9" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 587.067, 1222.83 )
 SPEED = -10000
 playFallingAnimation = false
 
 [node name="Platform13" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 772.793, 1224.42 )
 SPEED = -10000
 playFallingAnimation = false
 
 [node name="Platform10" parent="plataformas" instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 1163.29, 1233.95 )
 SPEED = -10000
 playFallingAnimation = false
@@ -176,30 +192,37 @@ format = 1
 [node name="Torretas" type="Node2D" parent="."]
 
 [node name="Turret" parent="Torretas" instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 403.686, 14.6378 )
 rotation = 2.7994
 
 [node name="Turret6" parent="Torretas" instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 405.539, 870.341 )
 rotation = 2.7994
 
 [node name="Turret7" parent="Torretas" instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 1097.17, 877.069 )
 rotation = 3.83401
 
 [node name="Turret2" parent="Torretas" instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 652.574, 14.6378 )
 rotation = 3.45685
 
 [node name="Turret3" parent="Torretas" instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 850.351, 14.6378 )
 rotation = 2.80843
 
 [node name="Turret4" parent="Torretas" instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 1052.62, 14.6378 )
 rotation = 3.43072
 
 [node name="Turret5" parent="Torretas" instance=ExtResource( 6 )]
+pause_mode = 1
 position = Vector2( 1295.63, 32.6677 )
 rotation = 3.86932
 

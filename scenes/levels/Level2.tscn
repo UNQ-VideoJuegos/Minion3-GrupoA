@@ -11,7 +11,7 @@
 [ext_resource path="res://scenes/levels/Level3.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/models/Lava.tscn" type="PackedScene" id=10]
 
-[sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=1]
 0/name = "colored.png 0"
 0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
@@ -51,6 +51,7 @@
 1/z_index = 0
 
 [node name="Level2" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 6 )
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
@@ -66,36 +67,43 @@ position = Vector2( 87.3822, 134.879 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+pause_mode = 1
 position = Vector2( 45.3571, 551.845 )
 
 [node name="Platform" parent="." instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 270.272, 500.682 )
 SPEED = -9999
 playFallingAnimation = false
 
 [node name="Platform2" parent="." instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 464, 320 )
 SPEED = -6000
 playFallingAnimation = false
 
 [node name="Platform3" parent="." instance=ExtResource( 4 )]
+pause_mode = 1
 position = Vector2( 720, 208 )
 SPEED = -6000
 playFallingAnimation = false
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
+pause_mode = 1
 position = Vector2( 871.865, 39.4986 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
 position = Vector2( 30.2381, 76.8552 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 2 )
+tile_set = SubResource( 1 )
 format = 1
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 8 )]
+pause_mode = 1
 position = Vector2( 975.436, 89.4158 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 9 )

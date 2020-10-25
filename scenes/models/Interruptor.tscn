@@ -61,6 +61,7 @@ animations = [ {
 extents = Vector2( 10.2795, 9.95291 )
 
 [node name="Interruptor" type="Area2D"]
+pause_mode = 1
 collision_layer = 7
 collision_mask = 31
 script = ExtResource( 2 )
@@ -73,6 +74,7 @@ region_enabled = true
 region_rect = Rect2( -1.60296, 186.334, 19.2045, 17.623 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+pause_mode = 1
 visible = false
 position = Vector2( 2, 5.25 )
 scale = Vector2( 0.4, 0.4 )
