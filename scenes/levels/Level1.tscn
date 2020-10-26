@@ -51,27 +51,22 @@ position = Vector2( 916.055, 508.401 )
 scale = Vector2( 1.8074, 2.61704 )
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
-pause_mode = 1
 position = Vector2( 818.172, 412.562 )
 scale = Vector2( 4, 4 )
 
 [node name="Door2" parent="." instance=ExtResource( 4 )]
-pause_mode = 1
 position = Vector2( 817.711, 98.7892 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 5 )]
-pause_mode = 1
 position = Vector2( 32.0659, 55.7285 )
 scale = Vector2( 1.46148, 1.53358 )
 
 [node name="Interruptor2" parent="." instance=ExtResource( 5 )]
-pause_mode = 1
 position = Vector2( 963.654, 145.715 )
 scale = Vector2( 1.46148, 1.53358 )
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 7 )]
-pause_mode = 1
 position = Vector2( 947.214, 465.324 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 8 )

@@ -27,12 +27,14 @@ func _show():
 	$BackButton.visible = true
 	$AudioButton.visible = true
 	$DifficultyButton.visible = true
+	$KeyMapButton.visible = true
 
 func _hide():
 	$OptionName.visible = false
 	$BackButton.visible = false
 	$AudioButton.visible = false
 	$DifficultyButton.visible = false
+	$KeyMapButton.visible = false
 
 func _on_DifficultyButton_pressed():
 	_hide()
@@ -46,7 +48,6 @@ func _on_BackButtonAudio_pressed():
 	$AudioHUD._hide()
 	_show()
 
-
 func _on_BackgroundSoundBtn_pressed():
 	var theme = Theme.new()
 	var bgs = get_tree().get_root().get_node("Main/BackgroundSound")
@@ -59,3 +60,11 @@ func _on_BackgroundSoundBtn_pressed():
 		backgroundSound = true
 		theme.set_color("font_color", "Button", Color.green)
 	$AudioHUD/BackgroundSoundBtn.theme = theme
+
+func _on_BackButtonKeyMap_pressed():
+	$KeyMaps._hide()
+	_show()
+
+func _on_KeyMapButton_pressed():
+	_hide()
+	$KeyMaps._show()
