@@ -73,6 +73,7 @@ func jump():
 		jump_intents = 2
 	if Input.is_action_just_pressed("jump") and jump_intents > 0:
 		dir = -1.0
+		$JumpSound.play()
 		jump_intents -=1
 	return dir
 
@@ -128,12 +129,14 @@ func damage(amount):
 		effects_animation.queue("flash")
 
 func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
+	$GamerOverSound.play()
 	$GunTimer.stop()
 	$Camera2D.current = false
 	hide() # no es la mejor solucion porque se puede seguir usando el personaje
 	yield(get_tree().create_timer(1.0), "timeout")
+	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
 	queue_free()
-	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn") 
+	
 
 func _set_health(value):
 	var prev_health = health

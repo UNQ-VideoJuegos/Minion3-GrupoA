@@ -89,12 +89,10 @@ SPEED = -6000
 playFallingAnimation = false
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
-pause_mode = 1
 position = Vector2( 871.865, 39.4986 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 3 )]
-pause_mode = 1
 position = Vector2( 30.2381, 76.8552 )
 scale = Vector2( 1.5, 1.5 )
 
@@ -103,7 +101,6 @@ tile_set = SubResource( 1 )
 format = 1
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 8 )]
-pause_mode = 1
 position = Vector2( 975.436, 89.4158 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 9 )

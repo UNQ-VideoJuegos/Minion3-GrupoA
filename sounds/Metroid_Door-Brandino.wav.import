@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Metroid_Door-Brandino.wav-5d1b07b6d51bffa1aafc0f241a2c019e.sample"
+
+[deps]
+
+source_file="res://sounds/Metroid_Door-Brandino.wav"
+dest_files=[ "res://.import/Metroid_Door-Brandino.wav-5d1b07b6d51bffa1aafc0f241a2c019e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

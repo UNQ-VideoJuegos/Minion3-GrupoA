@@ -19,6 +19,7 @@ func _get_configuration_warning() -> String:
 func _on_Portal_body_entered(body):
 	if (body.get_name() == "Player"):
 		body.hide()
+		$TransporterSound.play()
 		yield(get_tree().create_timer(.5), "timeout")
 		moving = true
 		

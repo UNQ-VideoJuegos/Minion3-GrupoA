@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
+[ext_resource path="res://sounds/error_003.wav" type="AudioStream" id=2]
 [ext_resource path="res://scenes/models/Bullets/Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=4]
+[ext_resource path="res://sounds/Mario_Jumping-Mike_Koenig.wav" type="AudioStream" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -138,6 +140,12 @@ one_shot = true
 anims/damage = SubResource( 9 )
 anims/flash = SubResource( 10 )
 anims/rest = SubResource( 11 )
+
+[node name="GamerOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
