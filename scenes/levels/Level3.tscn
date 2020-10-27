@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=2]
@@ -52,6 +52,9 @@
 1/shapes = [  ]
 1/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16.2465, 657.179 )
+
 [node name="Level3" type="Node2D"]
 pause_mode = 1
 script = ExtResource( 10 )
@@ -63,7 +66,7 @@ __meta__ = {
 [node name="floor" type="Node2D" parent="."]
 
 [node name="Floor" parent="floor" instance=ExtResource( 5 )]
-position = Vector2( 1605.92, 1229.53 )
+position = Vector2( 1605.92, 1135.24 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Floor3" parent="floor" instance=ExtResource( 5 )]
@@ -83,16 +86,16 @@ position = Vector2( 1332.61, 795.098 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Floor7" parent="floor" instance=ExtResource( 5 )]
-position = Vector2( 1333.87, 1229.21 )
+position = Vector2( 1333.87, 1134.92 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Floor6" parent="floor" instance=ExtResource( 5 )]
-position = Vector2( 1435.27, 1229.42 )
+position = Vector2( 1435.27, 1135.13 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 89.3848, 91.4562 )
+position = Vector2( 65.8987, 108.121 )
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 offset = Vector2( 0, -100 )
@@ -100,7 +103,7 @@ current = true
 limit_left = 0
 limit_top = 0
 limit_right = 1700
-limit_bottom = 1480
+limit_bottom = 1500
 smoothing_speed = 3.0
 
 [node name="plataformas" type="Node2D" parent="."]
@@ -150,37 +153,37 @@ playFallingAnimation = false
 
 [node name="Platform11" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 458.477, 1097.03 )
+position = Vector2( 468.001, 1125.55 )
 SPEED = 20000
 playFallingAnimation = false
 
 [node name="Platform12" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 1002.97, 1103.78 )
+position = Vector2( 1168.06, 1066.14 )
 SPEED = 20000
 playFallingAnimation = false
 
 [node name="Platform8" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 252.126, 1233.95 )
+position = Vector2( 235.175, 1139.66 )
 SPEED = -10000
 playFallingAnimation = false
 
 [node name="Platform9" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 587.067, 1222.83 )
-SPEED = -10000
+position = Vector2( 630.48, 1047.59 )
+SPEED = 20000
 playFallingAnimation = false
 
 [node name="Platform13" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 772.793, 1224.42 )
-SPEED = -10000
+position = Vector2( 780.184, 1050.76 )
+SPEED = 20000
 playFallingAnimation = false
 
 [node name="Platform10" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 1163.29, 1233.95 )
+position = Vector2( 1006.14, 1130.14 )
 SPEED = -10000
 playFallingAnimation = false
 
@@ -200,6 +203,11 @@ rotation = 2.7994
 pause_mode = 1
 position = Vector2( 405.539, 870.341 )
 rotation = 2.7994
+
+[node name="Turret8" parent="Torretas" instance=ExtResource( 6 )]
+pause_mode = 1
+position = Vector2( 676.761, 1237.54 )
+rotation = -0.033227
 
 [node name="Turret7" parent="Torretas" instance=ExtResource( 6 )]
 pause_mode = 1
@@ -289,12 +297,12 @@ rotation = 1.5708
 scale = Vector2( 2, 2 )
 
 [node name="wall_peaks50" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 866.331, 1280.87 )
+position = Vector2( 866.331, 1186.58 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
 
 [node name="wall_peaks51" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 370.705, 1282.55 )
+position = Vector2( 370.705, 1188.26 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
 
@@ -314,27 +322,27 @@ rotation = 1.5708
 scale = Vector2( 1.5, 1 )
 
 [node name="wall_peaks49" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 1259.55, 1293.63 )
+position = Vector2( 1259.55, 1199.34 )
 rotation = 1.5708
 scale = Vector2( 1.5, 1 )
 
 [node name="wall_peaks45" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 420.045, 1298.33 )
+position = Vector2( 420.045, 1204.04 )
 rotation = 1.5708
 scale = Vector2( 1.5, 1 )
 
 [node name="wall_peaks46" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 500.135, 1298.33 )
+position = Vector2( 500.135, 1204.04 )
 rotation = 1.5708
 scale = Vector2( 1.5, 1 )
 
 [node name="wall_peaks47" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 961.711, 1300.12 )
+position = Vector2( 961.711, 1205.83 )
 rotation = 1.5708
 scale = Vector2( 1.5, 1 )
 
 [node name="wall_peaks48" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 1041.8, 1300.12 )
+position = Vector2( 1041.8, 1205.83 )
 rotation = 1.5708
 scale = Vector2( 1.5, 1 )
 
@@ -390,19 +398,19 @@ position = Vector2( 1121.76, 543.219 )
 scale = Vector2( 5, 2 )
 
 [node name="wall_peaks31" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 151.361, 1360.57 )
+position = Vector2( 151.361, 1266.28 )
 scale = Vector2( 5, 2 )
 
 [node name="wall_peaks32" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 469.22, 1360.57 )
+position = Vector2( 469.22, 1266.28 )
 scale = Vector2( 5, 2 )
 
 [node name="wall_peaks33" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 787.92, 1360.57 )
+position = Vector2( 787.92, 1266.28 )
 scale = Vector2( 5, 2 )
 
 [node name="wall_peaks34" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 1108.3, 1360.57 )
+position = Vector2( 1108.3, 1266.28 )
 scale = Vector2( 5, 2 )
 
 [node name="wall_peaks35" parent="Muros" instance=ExtResource( 9 )]
@@ -422,7 +430,7 @@ position = Vector2( 1244.43, 836.229 )
 scale = Vector2( 5, 2 )
 
 [node name="wall_peaks29" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 1436.74, 1122.78 )
+position = Vector2( 1436.74, 1028.49 )
 scale = Vector2( 5, 2 )
 
 [node name="wall_peaks52" parent="Muros" instance=ExtResource( 9 )]
@@ -430,7 +438,7 @@ position = Vector2( 1442.07, 836.089 )
 scale = Vector2( 5, 2 )
 
 [node name="wall_peaks30" parent="Muros" instance=ExtResource( 9 )]
-position = Vector2( 1545.28, 1122.78 )
+position = Vector2( 1545.28, 1028.49 )
 scale = Vector2( 5, 2 )
 
 [node name="wall_peaks12" parent="Muros" instance=ExtResource( 9 )]
@@ -449,6 +457,16 @@ scale = Vector2( 5, 2 )
 position = Vector2( 1120.19, -19.9465 )
 scale = Vector2( 5, 2 )
 
+[node name="Muro Discreto" type="StaticBody2D" parent="Muros"]
+position = Vector2( -131.573, 614.484 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Muros/Muro Discreto"]
+position = Vector2( 104.668, 11.9865 )
+shape = SubResource( 2 )
+
 [node name="Lava" parent="." instance=ExtResource( 11 )]
 position = Vector2( 658.089, 516.772 )
 scale = Vector2( 90, 5 )
@@ -458,14 +476,14 @@ position = Vector2( 780.074, 817.659 )
 scale = Vector2( 90, 5 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1643.12, 1197.95 )
+position = Vector2( 1643.12, 1103.66 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 12 )
 
 [node name="doors" type="Node2D" parent="."]
 
 [node name="DoorFinal" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1543.1, 1146.03 )
+position = Vector2( 1543.1, 1051.74 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="doors" instance=ExtResource( 3 )]
@@ -481,7 +499,7 @@ position = Vector2( 233.476, 890.259 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Interruptor4" parent="doors" instance=ExtResource( 3 )]
-position = Vector2( 455.417, 1302.1 )
+position = Vector2( 455.417, 1207.81 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Interruptor5" parent="doors" instance=ExtResource( 3 )]
@@ -489,7 +507,7 @@ position = Vector2( 681.273, 877.943 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Interruptor6" parent="doors" instance=ExtResource( 3 )]
-position = Vector2( 994.901, 1293.38 )
+position = Vector2( 994.901, 1199.09 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Interruptor7" parent="doors" instance=ExtResource( 3 )]
@@ -501,19 +519,19 @@ position = Vector2( 1284.86, 424.267 )
 scale = Vector2( 3, 4 )
 
 [node name="Door2" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1220.75, 1146.72 )
+position = Vector2( 1220.75, 1052.43 )
 scale = Vector2( 3, 4 )
 
 [node name="Door3" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1286.21, 1147.21 )
+position = Vector2( 1286.21, 1052.92 )
 scale = Vector2( 3, 4 )
 
 [node name="Door4" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1466.81, 1146.32 )
+position = Vector2( 1466.81, 1052.03 )
 scale = Vector2( 3, 4 )
 
 [node name="Door5" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1376.91, 1145.41 )
+position = Vector2( 1376.91, 1051.12 )
 scale = Vector2( 3, 4 )
 
 [node name="Door6" parent="doors" instance=ExtResource( 1 )]
