@@ -33,6 +33,6 @@ one_shot = true
 
 [node name="ShakeAnimation" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
-playback_speed = 1.7
+playback_speed = 4.0
 anims/PlatformAnimation = ExtResource( 3 )
 [connection signal="timeout" from="PlatformTimer" to="." method="_on_PlatformTimer_timeout"]
