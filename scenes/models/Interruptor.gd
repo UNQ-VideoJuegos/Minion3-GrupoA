@@ -14,4 +14,4 @@ func _on_Interruptor_area_entered(area):
 		$AnimatedSprite.show()
 		$AnimatedSprite.play()
 		yield(get_tree().create_timer(.5), "timeout")
-		$AnimatedSprite.hide()
+		queue_free()

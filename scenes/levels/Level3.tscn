@@ -12,6 +12,7 @@
 [ext_resource path="res://scenes/levels/Level3.gd" type="Script" id=10]
 [ext_resource path="res://scenes/models/Lava.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/menu/Fin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/models/level objects/muro invisible.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "colored.png 0"
@@ -51,9 +52,6 @@
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16.2465, 657.179 )
 
 [node name="Level3" type="Node2D"]
 pause_mode = 1
@@ -457,15 +455,22 @@ scale = Vector2( 5, 2 )
 position = Vector2( 1120.19, -19.9465 )
 scale = Vector2( 5, 2 )
 
-[node name="Muro Discreto" type="StaticBody2D" parent="Muros"]
-position = Vector2( -131.573, 614.484 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="muro invisible" parent="Muros" instance=ExtResource( 13 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Muros/Muro Discreto"]
-position = Vector2( 104.668, 11.9865 )
-shape = SubResource( 2 )
+[node name="muro invisible2" parent="Muros" instance=ExtResource( 13 )]
+position = Vector2( -5.03265, 804.709 )
+
+[node name="muro invisible3" parent="Muros" instance=ExtResource( 13 )]
+position = Vector2( -5.03265, 1003.16 )
+
+[node name="muro invisible4" parent="Muros" instance=ExtResource( 13 )]
+position = Vector2( 1712.18, 273.022 )
+
+[node name="muro invisible5" parent="Muros" instance=ExtResource( 13 )]
+position = Vector2( 1712.18, 804.709 )
+
+[node name="muro invisible6" parent="Muros" instance=ExtResource( 13 )]
+position = Vector2( 1712.18, 1003.16 )
 
 [node name="Lava" parent="." instance=ExtResource( 11 )]
 position = Vector2( 658.089, 516.772 )

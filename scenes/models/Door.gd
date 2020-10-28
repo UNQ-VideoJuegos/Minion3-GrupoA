@@ -16,7 +16,6 @@ func open():
 func _physics_process(delta):
 	if (opening):
 		position.y -= SPEED * delta
-		print (position.y)
 		if (position.y < DOOR_LIMIT):
 			opening = false
 

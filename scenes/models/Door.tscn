@@ -5,13 +5,13 @@
 [ext_resource path="res://scenes/models/DoorBase.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2.09981, 7.76377 )
+extents = Vector2( 2.04984, 7.76377 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 13.6148, 0.787012 )
+extents = Vector2( 13.4366, 0.787012 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 2.23264, 0.845348 )
+extents = Vector2( 2.06849, 0.845348 )
 
 [node name="Door" type="Area2D"]
 pause_mode = 1

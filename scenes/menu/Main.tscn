@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=1]
 [ext_resource path="res://scenes/models/WelcomeHUD.gd" type="Script" id=2]
@@ -41,6 +41,10 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 70
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 40
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -129,20 +133,36 @@ __meta__ = {
 [node name="GameName" type="Label" parent="WelcomeHUD"]
 modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
 margin_left = 380.0
-margin_top = 150.0
-margin_right = 648.0
-margin_bottom = 235.0
+margin_top = 104.615
+margin_right = 705.0
+margin_bottom = 189.615
 custom_fonts/font = SubResource( 3 )
 text = "Minion 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Controls" type="Label" parent="WelcomeHUD"]
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
+margin_left = 184.0
+margin_top = 395.258
+margin_right = 889.0
+margin_bottom = 548.258
+custom_fonts/font = SubResource( 20 )
+text = "w-a-s-d  -> MOVE
+click -> fire!
+shift -> dash!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartGame" type="Button" parent="WelcomeHUD"]
 margin_left = 451.0
-margin_top = 287.0
-margin_right = 572.0
-margin_bottom = 331.0
+margin_top = 249.624
+margin_right = 588.0
+margin_bottom = 293.624
 custom_fonts/font = SubResource( 4 )
 text = "Start Game"
 __meta__ = {
@@ -151,9 +171,9 @@ __meta__ = {
 
 [node name="OptionsButton" type="Button" parent="WelcomeHUD"]
 margin_left = 451.031
-margin_top = 347.0
+margin_top = 309.624
 margin_right = 588.031
-margin_bottom = 391.0
+margin_bottom = 353.624
 custom_fonts/font = SubResource( 5 )
 text = "Options"
 __meta__ = {

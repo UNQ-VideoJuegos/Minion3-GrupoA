@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/models/TransportVehicle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/levels/Level2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/models/Lava.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/models/level objects/muro invisible.tscn" type="PackedScene" id=10]
 
 [node name="Level1" type="Node2D"]
 pause_mode = 2
@@ -20,11 +21,11 @@ position = Vector2( 719.815, 413.95 )
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 212.845, 330.715 )
+position = Vector2( 289.213, 330.715 )
 
 [node name="Platform3" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 442.804, 192.889 )
+position = Vector2( 472.804, 190.889 )
 
 [node name="Platform4" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
@@ -47,7 +48,7 @@ position = Vector2( 916.055, 508.401 )
 scale = Vector2( 1.8074, 2.61704 )
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
-position = Vector2( 818.172, 412.562 )
+position = Vector2( 819.117, 412.562 )
 scale = Vector2( 4, 4 )
 
 [node name="Door2" parent="." instance=ExtResource( 4 )]
@@ -74,3 +75,16 @@ position = Vector2( 190.675, 459.721 )
 [node name="Lava" parent="." instance=ExtResource( 9 )]
 position = Vector2( 690.304, 590.705 )
 scale = Vector2( 47.9596, 13.5966 )
+
+[node name="muro invisible" parent="." instance=ExtResource( 10 )]
+
+[node name="muro invisible2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1028.13, 270.352 )
+
+[node name="muro invisible3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 261.79, -25.0945 )
+rotation = 1.5708
+
+[node name="muro invisible4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 764.996, -25.0945 )
+rotation = 1.5708
